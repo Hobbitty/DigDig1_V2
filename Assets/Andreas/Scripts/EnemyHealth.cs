@@ -41,9 +41,7 @@ public class EnemyHealth : MonoBehaviour
             healthPoints -= wep.damage;
 
             StartCoroutine(Flash());
-            spriteRendEnemy.material.color = hitColor;
-           
-            
+
             rbodyEnemy.AddForce(new Vector2(knockbackX, knockbackY));
         }
 
