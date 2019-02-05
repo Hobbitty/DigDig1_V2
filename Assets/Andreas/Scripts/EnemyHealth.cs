@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [Header("healt and knockback")]
+    [Header("Health and Knockback")]
     public int healthPoints;
     public float knockbackX;
     public float knockbackY;
-    [Header("death effect")]
+    [Header("Death Effect")]
     public ParticleSystem deathEffect;
 
     private Rigidbody2D rbodyEnemy;
