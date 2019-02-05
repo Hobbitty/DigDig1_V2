@@ -11,9 +11,8 @@ public class InRangeCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        inRange = true;
+            inRange = true;
         InvokeRepeating("Shoot", shooterEnemyScript.chargeTime, shooterEnemyScript.chargeTime);
- 
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
