@@ -8,9 +8,6 @@ public class ShooterEnemyScript : MonoBehaviour
     public ShooterOnGroundScript shooterOnGroundScript;
     public InRangeCheck inRangeCheck;
 
-    [Header("Player")]
-    public Transform Player;
-
     [Header("Enemy")]
     public Rigidbody2D rBody;
     public float moveSpeed;
@@ -18,7 +15,20 @@ public class ShooterEnemyScript : MonoBehaviour
     [Header("Other")]
     public bool shooting = false;
     public float chargeTime;
+    public GameObject parent;
 
+    private Transform player;
+    private GameObject playerObject;
+
+    private void Start()
+
+    {
+        playerObject = GameObject.FindGameObjectWithTag("Player");
+        player = playerObject.GetComponent<Transform>();
+
+        Instantiate(parent);
+
+    }  
 
 
     private void Update()
@@ -35,18 +45,18 @@ public class ShooterEnemyScript : MonoBehaviour
     }
     void Move()
     {
-        rBody.velocity = (-transform.right * moveSpeed) * Time.deltaTime;
+        
 
-        if (Player.position.x > transform.position.x)
+        if (player.position.x > transform.position.x)
         {
             transform.localScale = new Vector2(-1, 1);
-            transform.eulerAngles = new Vector2 (0, 180);
+            rBody.velocity = (transform.right * moveSpeed) * Time.deltaTime;
         }
 
         else
         {
             transform.localScale = new Vector2(1, 1);
-            transform.eulerAngles = new Vector2(0, 0);
+            rBody.velocity = (-transform.right * moveSpeed) * Time.deltaTime;
         }
 
 
