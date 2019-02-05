@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d713d352ed31ace479d87b715fa23153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeSpeed: 50
-  shakeAmount: 2
+  shakeSpeed: 0
+  shakeAmount: 0
   playerHP: {fileID: 1819033644862715358, guid: bed4402bb625f7d4fb0ad507031e0b2a,
     type: 3}

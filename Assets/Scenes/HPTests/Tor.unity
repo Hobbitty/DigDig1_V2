@@ -750,12 +750,12 @@ PrefabInstance:
     - target: {fileID: 3355754760944015627, guid: b9ee5c2b4ca8b9f46afba73a50a317de,
         type: 3}
       propertyPath: shakeSpeed
-      value: 25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3355754760944015627, guid: b9ee5c2b4ca8b9f46afba73a50a317de,
         type: 3}
       propertyPath: shakeAmount
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7613740719515267345, guid: b9ee5c2b4ca8b9f46afba73a50a317de,
         type: 3}
