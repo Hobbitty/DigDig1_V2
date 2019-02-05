@@ -47,11 +47,9 @@ public class ShooterEnemyScript : MonoBehaviour
     {
         
 
-<<<<<<< HEAD:Assets/Scripts/ShooterEnemyScript.cs
+
         if (player.position.x > transform.position.x)
-=======
-        if (Player.position.x > transform.position.x)   
->>>>>>> 4af2866d8e35040acdb15cde5bcf87b66e29fbf6:Assets/ShooterEnemyScript.cs
+
         {
             transform.localScale = new Vector2(-1, 1);
             rBody.velocity = (transform.right * moveSpeed) * Time.deltaTime;

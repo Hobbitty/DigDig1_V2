@@ -44,6 +44,8 @@ GameObject:
   - component: {fileID: 5544980844774510737}
   - component: {fileID: 9135738485098731460}
   - component: {fileID: 5719097626373544964}
+  - component: {fileID: 1488714551}
+  - component: {fileID: 1488714552}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -212,3 +214,34 @@ PolygonCollider2D:
       - {x: -0.9128999, y: 1.020824}
       - {x: -1.0203599, y: -0.25310975}
       - {x: -0.7347832, y: -3.3396266}
+--- !u!114 &1488714551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7285945204729540855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36aaaa617dffb2846b535da5d97404ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpHeight: 50
+  currentJumpTime: 0
+  maxJumpTime: 0
+  moveSpeed: 10
+  iG: {fileID: 1488714552}
+--- !u!114 &1488714552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7285945204729540855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff887e9eff3ded04faf876048f607e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touches: 0
+  isGrounded: 0
