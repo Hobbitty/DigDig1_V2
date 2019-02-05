@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2853967712490350904}
   - component: {fileID: 3875285675272948323}
   - component: {fileID: 2440210369634521708}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FlyingEnemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e56aa598ee41c46849ae66ff4725d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 1
+  healthPoints: 10
   knockbackX: 500
   knockbackY: 500
   deathEffect: {fileID: 4327133232221799283, guid: bf5aca195a7cc294fa7b6ace160125a6,
