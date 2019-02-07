@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2819798748132721184}
   - component: {fileID: 2819798748132721374}
   - component: {fileID: 2819798748132721185}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: InRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 2819798749330749284}
   - component: {fileID: 2819798749330749285}
   - component: {fileID: 2819798749330749289}
+  - component: {fileID: 683707209}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Untagged
@@ -223,6 +224,24 @@ MonoBehaviour:
   moveSpeed: 100
   shooting: 0
   chargeTime: 2
+  parent: {fileID: 3392729848355425253, guid: 73686d5d3e8fdb841b4b3e24d5a3f9ea, type: 3}
+--- !u!114 &683707209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2819798749330749288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6e56aa598ee41c46849ae66ff4725d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 10
+  knockbackX: 10
+  knockbackY: 10
+  deathEffect: {fileID: 4327133232221799283, guid: bf5aca195a7cc294fa7b6ace160125a6,
+    type: 3}
 --- !u!1 &2819798749997986684
 GameObject:
   m_ObjectHideFlags: 0

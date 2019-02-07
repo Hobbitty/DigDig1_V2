@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6719212006414440020}
   - component: {fileID: 8920953448303236464}
   - component: {fileID: 8758924696534542089}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: PlayerHurtBoxUp
   m_TagString: PlayerHurtBox
   m_Icon: {fileID: 0}
