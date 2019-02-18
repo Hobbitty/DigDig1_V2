@@ -49,7 +49,7 @@ public class PlayerHP : MonoBehaviour
     }
     void Dead()
     {
-        if (hP == 0)
+        if (hP <= 0)
         {
             SceneManager.LoadScene(deathScene);
         }
