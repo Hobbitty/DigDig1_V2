@@ -23,9 +23,9 @@ public class BulletScript : MonoBehaviour
         diff = playerTransform.transform.position - transform.position;
         diff.Normalize();
     }
-    void Update()
+    void FixedUpdate()
     {
-        rBody.velocity = (diff * moveSpeed * Time.deltaTime);
+        rBody.velocity = (diff * moveSpeed);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
