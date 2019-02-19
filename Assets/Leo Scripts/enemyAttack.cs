@@ -44,11 +44,11 @@ public class enemyAttack : MonoBehaviour
 
         if(IsKnockbacked == true)
         {
-            playerSprite.color = new Color(0.7f, 0.7f, 1f);
+            playerSprite.color = new Color(0.8301887f, 0.8106087f, 0.8106087f, 0.5294118f);
         }
         else
         {
-            playerSprite.color = new Color(0.2988163f, 0.4777432f, 1f);
+            playerSprite.color = new Color(1f, 1f, 1f);
         }
     }
 
