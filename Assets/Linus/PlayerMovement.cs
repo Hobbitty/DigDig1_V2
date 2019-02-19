@@ -35,77 +35,92 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Jump();
-        if (isDashing == false)
+
+        if (enemyAttack.IsKnockbacked == false)
         {
-            moveInput = Input.GetAxis("Horizontal");
-            rBody.velocity = new Vector2(moveInput * moveSpeed, rBody.velocity.y);
+            Jump();
+            if (isDashing == false)
+            {
+                moveInput = Input.GetAxis("Horizontal");
+                rBody.velocity = new Vector2(moveInput * moveSpeed, rBody.velocity.y);
 
-            if (moveInput < 0)
-                transform.eulerAngles = new Vector2(0, 180);
+                if (moveInput < 0)
+                    transform.eulerAngles = new Vector2(0, 180);
 
-            if (moveInput > 0)
-                transform.eulerAngles = new Vector2(0, 0);
-        }
+                if (moveInput > 0)
+                    transform.eulerAngles = new Vector2(0, 0);
+            }
 
 
-        if (dashCounter == 1)
-            canDash = false;
+            if (dashCounter == 1)
+                canDash = false;
 
-        if (iG.isGrounded == true)
-        {
-            canDash = true;
-            dashCounter = 0;
-        }
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash == true)
-        {
             if (iG.isGrounded == true)
             {
-                isDashing = true;
-                rBody.gravityScale = 0;
-                Invoke("IsNotDashing", 0.5f);
-                rBody.velocity = transform.right * dashSpeed;
+                canDash = true;
+                dashCounter = 0;
             }
-            else
+            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash == true)
             {
-                dashCounter += 1;
-                isDashing = true;
-                rBody.gravityScale = 0;
-                Invoke("IsNotDashing", 0.5f);
-                rBody.velocity = transform.right * dashSpeed;
+                if (iG.isGrounded == true)
+                {
+                    isDashing = true;
+                    rBody.gravityScale = 0;
+                    Invoke("IsNotDashing", 0.5f);
+                    rBody.velocity = transform.right * dashSpeed;
+                }
+                else
+                {
+                    dashCounter += 1;
+                    isDashing = true;
+                    rBody.gravityScale = 0;
+                    Invoke("IsNotDashing", 0.5f);
+                    rBody.velocity = transform.right * dashSpeed;
+                }
             }
         }
+
 
 
     }
 
     void IsNotDashing()
     {
-        isDashing = false;
-        rBody.gravityScale = gravity;
+        if (enemyAttack.IsKnockbacked == false)
+        {
+            isDashing = false;
+            rBody.gravityScale = gravity;
+        }
+
     }
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && iG.isGrounded == true)
+
+        if (enemyAttack.IsKnockbacked == false)
         {
-            isJumping = true;
-            currentJumpTime = maxJumpTime;
-            rBody.velocity = new Vector2(rBody.velocity.x, jumpHeight);
-        }
-        if (Input.GetKey(KeyCode.Space) && isJumping == true)
-        {
-            if (currentJumpTime > 0)
+            if (Input.GetKeyDown(KeyCode.Space) && iG.isGrounded == true)
             {
+                isJumping = true;
+                currentJumpTime = maxJumpTime;
                 rBody.velocity = new Vector2(rBody.velocity.x, jumpHeight);
-                currentJumpTime -= Time.deltaTime;
             }
-            else
+            if (Input.GetKey(KeyCode.Space) && isJumping == true)
+            {
+                if (currentJumpTime > 0)
+                {
+                    rBody.velocity = new Vector2(rBody.velocity.x, jumpHeight);
+                    currentJumpTime -= Time.deltaTime;
+                }
+                else
+                    isJumping = false;
+            }
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
                 isJumping = false;
+            }
         }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            isJumping = false;
-        }
+
+
     }
 
 }
