@@ -39,24 +39,24 @@ public class PlayerAttack : MonoBehaviour
         CanAttackDown();
         Attacking();
         AttackingCooldown();
-        RangedAttack();
+        //RangedAttack();
     }
 
     void Attacking()
     {
-        if (Input.GetKeyDown(KeyCode.D) && lookingUp == false && lookingDown == false && canAttack == true)
+        if (Input.GetKeyDown(KeyCode.C) && lookingUp == false && lookingDown == false && canAttack == true)
         {
             print("attacking");
             Instantiate(attackHurtBoxForward,attackDirection);
             attackTimer = attackTimerMaxValue;
         }
-        if(Input.GetKeyDown(KeyCode.D) && lookingUp == true && canAttack == true)
+        if(Input.GetKeyDown(KeyCode.C) && lookingUp == true && canAttack == true)
         {
             print("attacking up");
             Instantiate(attackHurtBoxUp, attackDirection);
             attackTimer = attackTimerMaxValue;
         }
-        if(Input.GetKeyDown(KeyCode.D) && lookingDown == true && lookingUp == false && canAttack == true)
+        if(Input.GetKeyDown(KeyCode.C) && lookingDown == true && lookingUp == false && canAttack == true)
         {
             print("attacking down");
             Instantiate(attachHurtBoxDown, attackDirection);
@@ -116,7 +116,7 @@ public class PlayerAttack : MonoBehaviour
             canShoot = false;
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.X))
         {
             if(canShoot == true)
             {
