@@ -49,8 +49,6 @@ public class BossOne : MonoBehaviour
         if (jumpCounter >= maxNumberOfJumps)
         {
 
-            actualMovementX = 0;
-            actualMovementY = 0;
             rbodyBoss.bodyType = RigidbodyType2D.Static;
 
             isAttacking = true;
@@ -65,7 +63,6 @@ public class BossOne : MonoBehaviour
     {
         actualMovementX = maxMovementX;
         actualMovementY = maxMovemenY;
-
 
         isMoving = true;
         rbodyBoss.velocity = new Vector2(actualMovementX, actualMovementY);
@@ -84,7 +81,7 @@ public class BossOne : MonoBehaviour
 
             if (canAttack == true)
             {
-                Instantiate(meleeAttack);
+                Instantiate(meleeAttack, transform.position, transform.rotation);
                 attackTimer = attackFrequency;
                 numberOfAttacks++;
             }
