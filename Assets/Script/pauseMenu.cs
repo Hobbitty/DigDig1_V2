@@ -40,7 +40,7 @@ public class pauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
-        SceneManager.LoadScene("StartMenu");
+        //SceneManager.LoadScene("StartMenu");
         Debug.Log("Loading Menu...");
     }
 
