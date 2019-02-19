@@ -48,11 +48,8 @@ public class ShooterEnemyScript : MonoBehaviour
         
 
 
-<<<<<<< HEAD:Assets/Linus/Scripts/ShooterEnemyScript.cs
+
         if (player.position.x > transform.position.x)   
-=======
-        if (player.position.x > transform.position.x)
->>>>>>> 85e50578f0b6bf95eaebc8b07440310b27de9071:Assets/Scripts/ShooterEnemyScript.cs
 
         {
             transform.localScale = new Vector2(-1, 1);

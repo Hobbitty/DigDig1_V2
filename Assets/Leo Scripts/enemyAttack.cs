@@ -83,11 +83,11 @@ public class enemyAttack : MonoBehaviour
         {
             print("Player Has Been Killed");
             playerSprite.color = new Color(0.4625756f, 0.4964368f, 0.5524653f);
-            playerMovement.playerIsAlive = false;
+            LeoPlayerMovement.playerIsAlive = false;
         }
         else
         {
-            playerMovement.playerIsAlive = true;
+            LeoPlayerMovement.playerIsAlive = true;
         }
 
     }
