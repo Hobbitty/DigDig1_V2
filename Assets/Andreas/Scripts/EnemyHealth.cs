@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    [Header("Health and Knockback")]
     public int healthPoints;
     public float knockbackX;
     public float knockbackY;
+    [Header("Death Effect")]
+    public ParticleSystem deathEffect;
 
     private Rigidbody2D rbodyEnemy;
     private SpriteRenderer spriteRendEnemy;
@@ -29,6 +32,7 @@ public class EnemyHealth : MonoBehaviour
         {
             Destroy(gameObject);
             print("enemy killed");
+            DeathEffect();
         }
     }
 
@@ -41,9 +45,7 @@ public class EnemyHealth : MonoBehaviour
             healthPoints -= wep.damage;
 
             StartCoroutine(Flash());
-            spriteRendEnemy.material.color = hitColor;
-           
-            
+
             rbodyEnemy.AddForce(new Vector2(knockbackX, knockbackY));
         }
 
@@ -55,6 +57,11 @@ public class EnemyHealth : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         spriteRendEnemy.material.color = enemyColor;
 
+    }
+
+    void DeathEffect()
+    {
+        Instantiate(deathEffect, transform.position, transform.rotation);
     }
 
 }
