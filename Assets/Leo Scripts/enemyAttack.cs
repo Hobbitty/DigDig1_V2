@@ -17,6 +17,7 @@ public class enemyAttack : MonoBehaviour
     public Vector2 knockbackDirection;
     public static bool IsKnockbacked;
 
+    public PlayerHP playerHP;
 
     void Start()
     {
@@ -28,6 +29,8 @@ public class enemyAttack : MonoBehaviour
 
     private void Update()
     {
+        HP();
+
         transform.position = enemyPosition.position;
         knockbackDirection = playerPosition.transform.position - enemyPosition.transform.position;
         if (IsKnockbacked == true)
@@ -56,7 +59,7 @@ public class enemyAttack : MonoBehaviour
         {
             if (IsKnockbacked == false)
             {
-                currentPlayerHp = currentPlayerHp - (enemyBaseDmg * dmgMultiplier);
+                playerHP.hP = currentPlayerHp - (enemyBaseDmg * dmgMultiplier);
                 print("Player Has Been Damaged");
             }
 
@@ -88,5 +91,10 @@ public class enemyAttack : MonoBehaviour
             playerMovement.playerIsAlive = true;
         }
 
+    }
+
+    void HP()
+    {
+        currentPlayerHp = playerHP.hP;
     }
 }
