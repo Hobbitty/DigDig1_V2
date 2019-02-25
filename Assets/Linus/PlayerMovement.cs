@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if (enemyAttack.IsKnockbacked == false)
+        if (enemyAttack.IsKnockbacked || PlayerKnockback.IsKnockbacked == false)
         {
             Jump();
             if (isDashing == false)
@@ -96,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
 
-        if (enemyAttack.IsKnockbacked == false)
+        if (enemyAttack.IsKnockbacked || PlayerKnockback.IsKnockbacked == false)
         {
             if (Input.GetKeyDown(KeyCode.Space) && iG.isGrounded == true)
             {

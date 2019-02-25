@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    
+
     [Header("Hurtboxes")]
     public GameObject attackHurtBoxForward;
     public GameObject attackHurtBoxUp;
     public GameObject attachHurtBoxDown;
-    [Header ("Transforms")]
+    [Header("Transforms")]
     public Transform attackDirection;
     [Header("attackTimer")]
     public float attackTimer;
@@ -44,23 +44,26 @@ public class PlayerAttack : MonoBehaviour
 
     void Attacking()
     {
-        if (Input.GetKeyDown(KeyCode.C) && lookingUp == false && lookingDown == false && canAttack == true)
+        if (PlayerKnockback.IsKnockbacked || enemyAttack.IsKnockbacked == false)
         {
-            print("attacking");
-            Instantiate(attackHurtBoxForward,attackDirection);
-            attackTimer = attackTimerMaxValue;
-        }
-        if(Input.GetKeyDown(KeyCode.C) && lookingUp == true && canAttack == true)
-        {
-            print("attacking up");
-            Instantiate(attackHurtBoxUp, attackDirection);
-            attackTimer = attackTimerMaxValue;
-        }
-        if(Input.GetKeyDown(KeyCode.C) && lookingDown == true && lookingUp == false && canAttack == true)
-        {
-            print("attacking down");
-            Instantiate(attachHurtBoxDown, attackDirection);
-            attackTimer = attackTimerMaxValue;
+            if (Input.GetKeyDown(KeyCode.C) && lookingUp == false && lookingDown == false && canAttack == true)
+            {
+                print("attacking");
+                Instantiate(attackHurtBoxForward, attackDirection);
+                attackTimer = attackTimerMaxValue;
+            }
+            if (Input.GetKeyDown(KeyCode.C) && lookingUp == true && canAttack == true)
+            {
+                print("attacking up");
+                Instantiate(attackHurtBoxUp, attackDirection);
+                attackTimer = attackTimerMaxValue;
+            }
+            if (Input.GetKeyDown(KeyCode.C) && lookingDown == true && lookingUp == false && canAttack == true)
+            {
+                print("attacking down");
+                Instantiate(attachHurtBoxDown, attackDirection);
+                attackTimer = attackTimerMaxValue;
+            }
         }
     }
 
@@ -118,7 +121,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (Input.GetKey(KeyCode.X))
         {
-            if(canShoot == true)
+            if (canShoot == true)
             {
                 Instantiate(projectile, transform.position, transform.rotation);
                 rangedTimer = rangedTimerMaxValue;

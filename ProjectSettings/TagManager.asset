@@ -3,8 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: [invisiblewall, player, Ground, Enemy, PlayerHurtBox, Wall, PatrolArea, Ground,
-    Parent]
+  tags:
+  - invisiblewall
+  - Ground
+  - Enemy
+  - PlayerHurtBox
+  - Wall
+  - PatrolArea
+  - Ground
+  - Parent
   layers:
   - Default
   - TransparentFX
@@ -22,7 +29,6 @@ TagManager:
   - PlayerHurtBox
   - EnemyBullet
   - Player
-  - 
   - 
   - 
   - 
