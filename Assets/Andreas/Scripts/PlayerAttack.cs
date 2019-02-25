@@ -20,6 +20,8 @@ public class PlayerAttack : MonoBehaviour
     public float rangedTimer;
     public float rangedTimerMaxValue;
     public bool canShoot;
+    [Header("Grounded")]
+    public IsGrounded iG;
 
     private Rigidbody2D rbodyPlayer;
     private bool lookingUp;
@@ -30,6 +32,8 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         rbodyPlayer = GetComponent<Rigidbody2D>();
+
+        
     }
 
     // Update is called once per frame
@@ -56,7 +60,8 @@ public class PlayerAttack : MonoBehaviour
             Instantiate(attackHurtBoxUp, attackDirection);
             attackTimer = attackTimerMaxValue;
         }
-        if(Input.GetKeyDown(KeyCode.C) && lookingDown == true && lookingUp == false && canAttack == true)
+        
+        if(Input.GetKeyDown(KeyCode.C) && lookingDown == true && lookingUp == false && canAttack == true && iG.isGrounded == false)
         {
             print("attacking down");
             Instantiate(attachHurtBoxDown, attackDirection);
