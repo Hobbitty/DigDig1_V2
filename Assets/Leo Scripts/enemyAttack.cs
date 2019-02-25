@@ -18,8 +18,6 @@ public class enemyAttack : MonoBehaviour
     public static bool IsKnockbacked;
 
 
-
-
     void Start()
     {
         currentPlayerHp = playerMaxHp;
@@ -42,7 +40,7 @@ public class enemyAttack : MonoBehaviour
             IsKnockbacked = false;
         }
 
-        if(IsKnockbacked == true)
+        if (IsKnockbacked == true)
         {
             playerSprite.color = new Color(0.7f, 0.7f, 1f);
         }
@@ -91,6 +89,4 @@ public class enemyAttack : MonoBehaviour
         }
 
     }
-
-
 }

@@ -504,42 +504,60 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1893483715, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
+      propertyPath: hearts.Array.data[0]
+      value: 
+      objectReference: {fileID: 835376626}
+    - target: {fileID: 1893483715, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
+      propertyPath: hearts.Array.data[1]
+      value: 
+      objectReference: {fileID: 1360312004}
+    - target: {fileID: 1893483715, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
+      propertyPath: hearts.Array.data[2]
+      value: 
+      objectReference: {fileID: 1850739780}
+    - target: {fileID: 1893483715, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
+      propertyPath: hearts.Array.data[3]
+      value: 
+      objectReference: {fileID: 2051555564}
+    - target: {fileID: 1893483715, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
+      propertyPath: hearts.Array.data[4]
+      value: 
+      objectReference: {fileID: 536520422}
+    - target: {fileID: 1893483715, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
+      propertyPath: hearts.Array.data[5]
+      value: 
+      objectReference: {fileID: 1058205972}
+    - target: {fileID: 1893483715, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
+      propertyPath: hearts.Array.data[6]
+      value: 
+      objectReference: {fileID: 1244530744}
+    - target: {fileID: 1893483715, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
+      propertyPath: hearts.Array.data[7]
+      value: 
+      objectReference: {fileID: 1282835372}
+    - target: {fileID: 1893483715, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
+      propertyPath: hearts.Array.data[8]
+      value: 
+      objectReference: {fileID: 20538309}
+    - target: {fileID: 1893483715, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
+      propertyPath: hearts.Array.data[9]
+      value: 
+      objectReference: {fileID: 1571107367}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
---- !u!1 &1893483714 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7285945204729540855, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
+--- !u!114 &1893483715 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1893483715, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
     type: 3}
   m_PrefabInstance: {fileID: 1893483713}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1893483715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1893483714}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36a363252f78bff4ebc91b886bceba5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hP: 10
-  numberOfHearts: 10
-  hearts:
-  - {fileID: 835376626}
-  - {fileID: 1360312004}
-  - {fileID: 1850739780}
-  - {fileID: 2051555564}
-  - {fileID: 536520422}
-  - {fileID: 1058205972}
-  - {fileID: 1244530744}
-  - {fileID: 1282835372}
-  - {fileID: 20538309}
-  - {fileID: 1571107367}
-  fullHeart: {fileID: 21300000, guid: 8b6854943c1e9f843a17b1f57f8424bc, type: 3}
-  emptyHeart: {fileID: 21300000, guid: 9aea8a47855efb64fb0122f6bda6b0b1, type: 3}
-  deathScene: 
 --- !u!114 &2051555564 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7613740718919470695, guid: b9ee5c2b4ca8b9f46afba73a50a317de,
