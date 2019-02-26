@@ -629,7 +629,7 @@ PrefabInstance:
     - target: {fileID: 3355754759439896423, guid: b9ee5c2b4ca8b9f46afba73a50a317de,
         type: 3}
       propertyPath: m_Name
-      value: HPCanvas (1)
+      value: 'HPCanvas '
       objectReference: {fileID: 0}
     - target: {fileID: 3355754759439896419, guid: b9ee5c2b4ca8b9f46afba73a50a317de,
         type: 3}
@@ -736,6 +736,66 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3355754760944015627, guid: b9ee5c2b4ca8b9f46afba73a50a317de,
+        type: 3}
+      propertyPath: shakeSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355754760944015627, guid: b9ee5c2b4ca8b9f46afba73a50a317de,
+        type: 3}
+      propertyPath: shakeAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355754760944015627, guid: b9ee5c2b4ca8b9f46afba73a50a317de,
+        type: 3}
+      propertyPath: playerHP
+      value: 
+      objectReference: {fileID: 419127809}
+    - target: {fileID: 7613740718154390246, guid: b9ee5c2b4ca8b9f46afba73a50a317de,
+        type: 3}
+      propertyPath: playerHP
+      value: 
+      objectReference: {fileID: 419127809}
+    - target: {fileID: 7613740718547049045, guid: b9ee5c2b4ca8b9f46afba73a50a317de,
+        type: 3}
+      propertyPath: playerHP
+      value: 
+      objectReference: {fileID: 419127809}
+    - target: {fileID: 7613740718919470689, guid: b9ee5c2b4ca8b9f46afba73a50a317de,
+        type: 3}
+      propertyPath: playerHP
+      value: 
+      objectReference: {fileID: 419127809}
+    - target: {fileID: 7613740718928626020, guid: b9ee5c2b4ca8b9f46afba73a50a317de,
+        type: 3}
+      propertyPath: playerHP
+      value: 
+      objectReference: {fileID: 419127809}
+    - target: {fileID: 7613740719515267348, guid: b9ee5c2b4ca8b9f46afba73a50a317de,
+        type: 3}
+      propertyPath: playerHP
+      value: 
+      objectReference: {fileID: 419127809}
+    - target: {fileID: 7613740719571311111, guid: b9ee5c2b4ca8b9f46afba73a50a317de,
+        type: 3}
+      propertyPath: playerHP
+      value: 
+      objectReference: {fileID: 419127809}
+    - target: {fileID: 7613740719674018997, guid: b9ee5c2b4ca8b9f46afba73a50a317de,
+        type: 3}
+      propertyPath: playerHP
+      value: 
+      objectReference: {fileID: 419127809}
+    - target: {fileID: 7613740719965228905, guid: b9ee5c2b4ca8b9f46afba73a50a317de,
+        type: 3}
+      propertyPath: playerHP
+      value: 
+      objectReference: {fileID: 419127809}
+    - target: {fileID: 7613740720002088438, guid: b9ee5c2b4ca8b9f46afba73a50a317de,
+        type: 3}
+      propertyPath: playerHP
+      value: 
+      objectReference: {fileID: 419127809}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9ee5c2b4ca8b9f46afba73a50a317de, type: 3}
 --- !u!114 &552593930 stripped
