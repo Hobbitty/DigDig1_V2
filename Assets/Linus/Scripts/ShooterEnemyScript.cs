@@ -28,7 +28,7 @@ public class ShooterEnemyScript : MonoBehaviour
 
         Instantiate(parent);
 
-    }  
+    }
 
 
     private void Update()
@@ -45,12 +45,12 @@ public class ShooterEnemyScript : MonoBehaviour
     }
     void Move()
     {
-        
 
 
 
-        if (player.position.x > transform.position.x)   
 
+
+        if (player.position.x > transform.position.x)
         {
             transform.localScale = new Vector2(-1, 1);
             rBody.velocity = (transform.right * moveSpeed) * Time.deltaTime;

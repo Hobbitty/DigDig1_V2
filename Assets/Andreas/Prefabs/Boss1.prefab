@@ -102,7 +102,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 0839bf39c8dc43641b200214c746046c, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!60 &5857693842264050172
 PolygonCollider2D:
@@ -157,12 +157,16 @@ MonoBehaviour:
   maxNumberOfJumps: 5
   meleeAttack: {fileID: 4817838943929786557, guid: 7f18482319dff4647a9661ecbdf61412,
     type: 3}
-  rangedAttack: {fileID: 0}
+  shockWave: {fileID: 3454079197886750277, guid: 303c7d4d6f724a44386719d05d2f83f2,
+    type: 3}
+  fallingObject: {fileID: 6283828263830899068, guid: bb99dcf71fddc3241854387199f83c72,
+    type: 3}
   attackTimer: 0
   attackFrequency: 3
   canAttack: 0
   numberOfAttacks: 0
   maxNumberOfAttacks: 3
+  lastAttackTimer: 1.5
   isMoving: 0
   isAttacking: 0
   isOnGround: 0

@@ -3,9 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: [invisiblewall, player, Ground, Enemy, PlayerHurtBox, Wall, PatrolArea, Ground,
-    Parent, invisiblewall, player, Ground, Enemy, PlayerHurtBox, Wall, PatrolArea,
-    Ground, Parent]
+  tags:
+  - Heart
   layers:
   - Default
   - TransparentFX
@@ -15,21 +14,14 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - Projectiles
-  - Patrol Area
-  - Ground
-  - Enemies
-  - PlayerHurtBox
-  - EnemyBullet
-  - Player
-  - Projectiles
-  - Patrol Area
-  - Ground
-  - Enemies
-  - PlayerHurtBox
-  - EnemyBullet
-  - Flyers
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

@@ -11,13 +11,15 @@ public class BossOne : MonoBehaviour
     public int maxNumberOfJumps;
     [Header("attacks")]
     public GameObject meleeAttack;
-    public GameObject rangedAttack;
+    public GameObject shockWave;
+    public GameObject fallingObject;
     [Header("Attacking")]
     public float attackTimer;
     public float attackFrequency;
     public bool canAttack;
     public int numberOfAttacks;
     public int maxNumberOfAttacks;
+    public float lastAttackTimer = 2;
 
     private Rigidbody2D rbodyBoss;
 
@@ -92,6 +94,10 @@ public class BossOne : MonoBehaviour
             if (canAttack == true && doneAttacking == false)
             {
                 Instantiate(meleeAttack, transform.position, transform.rotation);
+                Instantiate(shockWave, new Vector3(transform.position.x, transform.position.y - 0.6f),
+                    transform.rotation);
+                Instantiate(fallingObject,
+                new Vector3(Random.Range(-10, 24), 16), transform.rotation);
                 attackTimer = attackFrequency;
                 numberOfAttacks++;
             }
@@ -99,16 +105,19 @@ public class BossOne : MonoBehaviour
 
         if (numberOfAttacks >= maxNumberOfAttacks)
         {
-            print("done attacking");
-            doneAttacking = true;
-            isAttacking = false;
-            isMoving = true;
-            attackTimer = attackFrequency;
-            jumpCounter = 0;
-            numberOfAttacks = 0;
-            rbodyBoss.bodyType = RigidbodyType2D.Dynamic;
-
-
+            lastAttackTimer -= Time.deltaTime;
+            if (lastAttackTimer <= 0)
+            {
+                print("done attacking");
+                doneAttacking = true;
+                isAttacking = false;
+                isMoving = true;
+                attackTimer = attackFrequency;
+                jumpCounter = 0;
+                numberOfAttacks = 0;
+                rbodyBoss.bodyType = RigidbodyType2D.Dynamic;
+                lastAttackTimer = 2;
+            }
         }
     }
 
@@ -125,6 +134,19 @@ public class BossOne : MonoBehaviour
         {
             isOnGround = true;
             jumpCounter++;
+
+            for (int i = 0; i < 2; i++)
+            {
+                Instantiate(fallingObject,
+                    new Vector3(Random.Range(-10, 24), 16), transform.rotation);
+            }
+
+            if (isLeft == true)
+                maxMovementX = Random.Range(8, 11);
+            else
+                maxMovementX = Random.Range(-8, -11);
+
+            maxMovemenY = Random.Range(20, 40);
         }
 
         if (collision.gameObject.tag == "Wall")
