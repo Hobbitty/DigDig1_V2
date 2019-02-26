@@ -7,7 +7,7 @@ public class enemyAttack : MonoBehaviour
 
     public int enemyBaseDmg;
     public float dmgMultiplier;
-    public float playerMaxHp = 100;
+    public float playerMaxHp = 10;
     public SpriteRenderer playerSprite;
     public Transform enemyPosition;
     public float currentPlayerHp;
