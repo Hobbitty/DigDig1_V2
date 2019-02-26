@@ -24,6 +24,7 @@ public class BossOne : MonoBehaviour
     public float lastAttackTimer = 2;
     [Header("Rampage")]
     public int NumOfFallingObjects;
+    public int takenDamage;
     [Header("Health")]
     public float healthTreshold;
 
@@ -50,8 +51,10 @@ public class BossOne : MonoBehaviour
 
         EnemyHealth bossHealth = gameObject.GetComponent<EnemyHealth>();
         healthTreshold = bossHealth.healthPoints / 2;
+        takenDamage = bossHealth.healthPoints;
 
         NumOfFallingObjects = 1;
+
     }
 
     // Update is called once per frame
@@ -73,6 +76,17 @@ public class BossOne : MonoBehaviour
                 healthTreshold = 0;
             }
         }
+
+        EnemyHealth HPDamageCheck = gameObject.GetComponent<EnemyHealth>();
+        GameObject playerTank = GameObject.FindWithTag("Player");
+        Transform playerTransform = playerTank.transform;
+        if (HPDamageCheck.healthPoints < takenDamage)
+        {
+            Instantiate(fallingObject, (new Vector3(playerTransform.position.x, 16, 0)), transform.rotation);
+            takenDamage = HPDamageCheck.healthPoints;
+        }
+
+
     }
 
     void Jumping()
@@ -102,7 +116,7 @@ public class BossOne : MonoBehaviour
     void Attacking()
     {
         doneAttacking = false;
-        
+
         if (attackTimer <= 0)
             canAttack = true;
         else
