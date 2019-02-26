@@ -14,7 +14,7 @@ public class RegularHPReg : MonoBehaviour
         {
             if (playerHP.hP < playerHP.numberOfHearts)
             {
-                playerHP.hP = addHP;
+                playerHP.hP = playerHP.hP + addHP;
                 Destroy(gameObject);
             }
         }
