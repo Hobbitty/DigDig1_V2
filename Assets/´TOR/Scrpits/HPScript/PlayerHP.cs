@@ -19,7 +19,6 @@ public class PlayerHP : MonoBehaviour
         Dead();
     }
 
-    //Visar hur mycket HP man har kvar och vad som är max
     void HeartNumber()
     {
         if (hP > numberOfHearts)

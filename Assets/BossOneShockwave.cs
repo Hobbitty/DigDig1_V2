@@ -15,6 +15,10 @@ public class BossOneShockwave : MonoBehaviour
             transform.Translate(new Vector3(travelSpeed * Time.deltaTime, 0));
         else
             transform.Translate(new Vector3(-travelSpeed * Time.deltaTime, 0));
+        EnemyHealth bossOneHealth = bossOne.GetComponent<EnemyHealth>();
+        if (bossOneHealth.healthPoints <= 0)
+            Destroy(gameObject);
+    
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

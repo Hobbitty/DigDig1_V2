@@ -27,7 +27,7 @@ public class Shake : MonoBehaviour
 
         float lowHealth = playerHP.numberOfHearts / 2;
 
-        if (playerHP.hP < lowHealth)
+        if (playerHP.hP <= lowHealth)
         {
             shakeSpeed = 10;
             shakeAmount = 1;
@@ -38,7 +38,7 @@ public class Shake : MonoBehaviour
             transform.localPosition = pos;
         }
 
-        if (playerHP.hP == oneHP)
+        if (playerHP.hP <= oneHP)
         {
             shakeSpeed = shakeSpeed * 5;
             shakeAmount = 1;

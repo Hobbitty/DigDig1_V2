@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Heart
+  - Heart
+  - PlayerHurtBox
+  - Boss
   layers:
   - Default
   - TransparentFX

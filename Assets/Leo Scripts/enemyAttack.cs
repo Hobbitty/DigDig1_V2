@@ -7,7 +7,7 @@ public class enemyAttack : MonoBehaviour
 
     public int enemyBaseDmg;
     public float dmgMultiplier;
-    public float playerMaxHp = 100;
+    public float playerMaxHp = 10;
     public SpriteRenderer playerSprite;
     public Transform enemyPosition;
     public float currentPlayerHp;
@@ -17,8 +17,7 @@ public class enemyAttack : MonoBehaviour
     public Vector2 knockbackDirection;
     public static bool IsKnockbacked;
 
-
-
+    public PlayerHP playerHP;
 
     void Start()
     {
@@ -30,6 +29,8 @@ public class enemyAttack : MonoBehaviour
 
     private void Update()
     {
+        HP();
+
         transform.position = enemyPosition.position;
         knockbackDirection = playerPosition.transform.position - enemyPosition.transform.position;
         if (IsKnockbacked == true)
@@ -42,7 +43,7 @@ public class enemyAttack : MonoBehaviour
             IsKnockbacked = false;
         }
 
-        if(IsKnockbacked == true)
+        if (IsKnockbacked == true)
         {
             playerSprite.color = new Color(0.8301887f, 0.8106087f, 0.8106087f, 0.5294118f);
         }
@@ -58,7 +59,7 @@ public class enemyAttack : MonoBehaviour
         {
             if (IsKnockbacked == false)
             {
-                currentPlayerHp = currentPlayerHp - (enemyBaseDmg * dmgMultiplier);
+                playerHP.hP = currentPlayerHp - (enemyBaseDmg * dmgMultiplier);
                 print("Player Has Been Damaged");
             }
 
@@ -92,5 +93,8 @@ public class enemyAttack : MonoBehaviour
 
     }
 
-
+    void HP()
+    {
+        currentPlayerHp = playerHP.hP;
+    }
 }

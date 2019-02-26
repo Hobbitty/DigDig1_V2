@@ -9,6 +9,8 @@ public class BossOne : MonoBehaviour
     public float maxMovemenY;
     public int jumpCounter;
     public int maxNumberOfJumps;
+    public bool isLeft = true;
+    public bool isOnGround;
     [Header("attacks")]
     public GameObject meleeAttack;
     public GameObject shockWave;
@@ -20,17 +22,21 @@ public class BossOne : MonoBehaviour
     public int numberOfAttacks;
     public int maxNumberOfAttacks;
     public float lastAttackTimer = 2;
+    [Header("Rampage")]
+    public int NumOfFallingObjects;
+    [Header("Health")]
+    public float healthTreshold;
 
     private Rigidbody2D rbodyBoss;
 
     private float actualMovementX;
     private float actualMovementY;
 
-    public bool isMoving;
-    public bool isAttacking;
-    public bool isOnGround;
-    public bool isLeft = true;
-    public bool doneAttacking = false;
+    private bool isMoving;
+    private bool isAttacking;
+    private bool doneAttacking = false;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +48,10 @@ public class BossOne : MonoBehaviour
 
         attackTimer = attackFrequency;
 
+        EnemyHealth bossHealth = gameObject.GetComponent<EnemyHealth>();
+        healthTreshold = bossHealth.healthPoints / 2;
 
+        NumOfFallingObjects = 1;
     }
 
     // Update is called once per frame
@@ -50,14 +59,27 @@ public class BossOne : MonoBehaviour
     {
         Jumping();
         Attacking();
+
+        EnemyHealth bossHealth = gameObject.GetComponent<EnemyHealth>();
+        if (bossHealth.healthPoints <= healthTreshold)
+        {
+            for (int r = 0; r < 1; r++)
+            {
+                maxNumberOfJumps += 1;
+                maxNumberOfAttacks += 2;
+                NumOfFallingObjects *= 2;
+                attackFrequency /= 2;
+
+                healthTreshold = 0;
+            }
+        }
     }
 
     void Jumping()
     {
-
+        rbodyBoss.bodyType = RigidbodyType2D.Dynamic;
         if (isOnGround == true && jumpCounter < maxNumberOfJumps)
         {
-            rbodyBoss.bodyType = RigidbodyType2D.Dynamic;
 
             actualMovementX = maxMovementX;
             actualMovementY = maxMovemenY;
@@ -68,7 +90,6 @@ public class BossOne : MonoBehaviour
 
         if (jumpCounter >= maxNumberOfJumps)
         {
-
             rbodyBoss.bodyType = RigidbodyType2D.Static;
 
             isAttacking = true;
@@ -81,7 +102,7 @@ public class BossOne : MonoBehaviour
     void Attacking()
     {
         doneAttacking = false;
-
+        
         if (attackTimer <= 0)
             canAttack = true;
         else
@@ -96,8 +117,11 @@ public class BossOne : MonoBehaviour
                 Instantiate(meleeAttack, transform.position, transform.rotation);
                 Instantiate(shockWave, new Vector3(transform.position.x, transform.position.y - 0.6f),
                     transform.rotation);
-                Instantiate(fallingObject,
-                new Vector3(Random.Range(-10, 24), 16), transform.rotation);
+                for (int f = 0; f < NumOfFallingObjects; f++)
+                {
+                    Instantiate(fallingObject,
+                    new Vector3(Random.Range(-10, 24), 16), transform.rotation);
+                }
                 attackTimer = attackFrequency;
                 numberOfAttacks++;
             }
@@ -121,12 +145,7 @@ public class BossOne : MonoBehaviour
         }
     }
 
-    void Rampage()
-    {
 
-
-
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -135,7 +154,7 @@ public class BossOne : MonoBehaviour
             isOnGround = true;
             jumpCounter++;
 
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < NumOfFallingObjects + 1; i++)
             {
                 Instantiate(fallingObject,
                     new Vector3(Random.Range(-10, 24), 16), transform.rotation);
@@ -158,29 +177,27 @@ public class BossOne : MonoBehaviour
             else
                 isLeft = true;
 
-
             if (isLeft == true)
                 transform.localScale = new Vector2(-0.8f, 0.8f);
             else
                 transform.localScale = new Vector2(0.8f, 0.8f);
 
-
             actualMovementX *= -1;
             maxMovementX *= -1;
-
         }
-
     }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
             isOnGround = true;
     }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
             isOnGround = false;
-
     }
+
 }
 
