@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -50
   m_Sprite: {fileID: 21300000, guid: 180a2972140933f43a7f7bdf2e9c45c4, type: 3}
-  m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
+  m_Color: {r: 0.7607843, g: 0.7607843, b: 0.7607843, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -155,6 +155,8 @@ MonoBehaviour:
   maxMovemenY: 30
   jumpCounter: 0
   maxNumberOfJumps: 5
+  isLeft: 1
+  isOnGround: 0
   meleeAttack: {fileID: 4817838943929786557, guid: 7f18482319dff4647a9661ecbdf61412,
     type: 3}
   shockWave: {fileID: 3454079197886750277, guid: 303c7d4d6f724a44386719d05d2f83f2,
@@ -167,11 +169,9 @@ MonoBehaviour:
   numberOfAttacks: 0
   maxNumberOfAttacks: 3
   lastAttackTimer: 2
-  isMoving: 0
-  isAttacking: 0
-  isOnGround: 0
-  isLeft: 1
-  doneAttacking: 0
+  NumOfFallingObjects: 0
+  takenDamage: 0
+  healthTreshold: 0
 --- !u!114 &524647869
 MonoBehaviour:
   m_ObjectHideFlags: 0

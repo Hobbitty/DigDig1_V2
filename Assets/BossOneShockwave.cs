@@ -6,19 +6,25 @@ public class BossOneShockwave : MonoBehaviour
 {
     public float travelSpeed;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
         GameObject bossOne = GameObject.Find("Boss1");
         BossOne bossOneScript = bossOne.GetComponent<BossOne>();
-        if (bossOneScript.isLeft == true)
-            transform.Translate(new Vector3(travelSpeed * Time.deltaTime, 0));
-        else
-            transform.Translate(new Vector3(-travelSpeed * Time.deltaTime, 0));
+        if (bossOneScript.isLeft == false)
+            travelSpeed *= -1;
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        transform.Translate(new Vector3(travelSpeed * Time.deltaTime, 0));
+
+
+        GameObject bossOne = GameObject.Find("Boss1");
         EnemyHealth bossOneHealth = bossOne.GetComponent<EnemyHealth>();
         if (bossOneHealth.healthPoints <= 0)
             Destroy(gameObject);
-    
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
