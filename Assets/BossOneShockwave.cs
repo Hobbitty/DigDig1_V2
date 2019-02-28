@@ -21,7 +21,7 @@ public class BossOneShockwave : MonoBehaviour
         transform.Translate(new Vector3(travelSpeed * Time.deltaTime, 0));
 
 
-        GameObject bossOne = GameObject.Find("Boss1");
+        GameObject bossOne = GameObject.FindWithTag("Boss");
         EnemyHealth bossOneHealth = bossOne.GetComponent<EnemyHealth>();
         if (bossOneHealth.healthPoints <= 0)
             Destroy(gameObject);

@@ -2,35 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyAttack : MonoBehaviour
+public class PlayerKnockback : MonoBehaviour
 {
 
-    public int enemyBaseDmg;
-    public float dmgMultiplier;
-    public float playerMaxHp = 10;
-    public SpriteRenderer playerSprite;
-    public Transform enemyPosition;
-    public float currentPlayerHp;
     public float knockBackReset;
     public Transform playerPosition;
     public Rigidbody2D rBody;
     public Vector2 knockbackDirection;
     public static bool IsKnockbacked;
-
-    public PlayerHP playerHP;
+    public Transform enemyPosition;
+    public SpriteRenderer playerSprite;
+    public float knockbackValue;
 
     void Start()
     {
-        currentPlayerHp = playerMaxHp;
         knockBackReset = 0;
         IsKnockbacked = false;
-
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        HP();
-
         transform.position = enemyPosition.position;
         knockbackDirection = playerPosition.transform.position - enemyPosition.transform.position;
         if (IsKnockbacked == true)
@@ -59,13 +51,13 @@ public class enemyAttack : MonoBehaviour
         {
             if (IsKnockbacked == false)
             {
-                playerHP.hP = currentPlayerHp - (enemyBaseDmg * dmgMultiplier);
+               
                 print("Player Has Been Damaged");
             }
 
-            print(currentPlayerHp);
+           
             IsKnockbacked = true;
-            rBody.AddForce(knockbackDirection * 300);
+            rBody.AddForce(knockbackDirection * knockbackValue);
 
             if (playerPosition.position.x <= enemyPosition.position.x)
             {
@@ -80,21 +72,5 @@ public class enemyAttack : MonoBehaviour
             }
         }
 
-        if (currentPlayerHp <= 0)
-        {
-            print("Player Has Been Killed");
-            playerSprite.color = new Color(0.4625756f, 0.4964368f, 0.5524653f);
-            LeoPlayerMovement.playerIsAlive = false;
-        }
-        else
-        {
-            LeoPlayerMovement.playerIsAlive = true;
-        }
-
-    }
-
-    void HP()
-    {
-        currentPlayerHp = playerHP.hP;
     }
 }
