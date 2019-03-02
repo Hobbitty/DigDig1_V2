@@ -5,12 +5,12 @@ using UnityEngine;
 public class FullHPReg : MonoBehaviour
 {
     public PlayerHP playerHP;
+    public RegularHPReg hpReg;
     public bool touchesPlayer;
-    public float addHP;
 
     private void Start()
     {
-        addHP = playerHP.numberOfHearts;
+        hpReg.addHP = playerHP.numberOfHearts;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -18,7 +18,7 @@ public class FullHPReg : MonoBehaviour
         {
             if (playerHP.hP < playerHP.numberOfHearts)
             {
-                playerHP.hP = addHP;
+                playerHP.hP = hpReg.addHP;
                 Destroy(gameObject);
             }
         }
