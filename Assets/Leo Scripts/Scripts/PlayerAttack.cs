@@ -48,19 +48,16 @@ public class PlayerAttack : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.C) && lookingUp == false && lookingDown == false && canAttack == true)
             {
-                print("attacking");
                 Instantiate(attackHurtBoxForward, attackDirection);
                 attackTimer = attackTimerMaxValue;
             }
             if (Input.GetKeyDown(KeyCode.C) && lookingUp == true && canAttack == true)
             {
-                print("attacking up");
                 Instantiate(attackHurtBoxUp, attackDirection);
                 attackTimer = attackTimerMaxValue;
             }
             if (Input.GetKeyDown(KeyCode.C) && lookingDown == true && lookingUp == false && canAttack == true)
             {
-                print("attacking down");
                 Instantiate(attachHurtBoxDown, attackDirection);
                 attackTimer = attackTimerMaxValue;
             }

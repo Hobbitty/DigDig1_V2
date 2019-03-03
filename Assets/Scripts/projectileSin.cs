@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class projectileSin : MonoBehaviour
 {
-    public float MoveSpeed = 5.0f;
+    public float MoveSpeed; //Space between waves
 
-    public float frequency = 20.0f;  // Speed of sine movement
-    public float magnitude = 0.5f;   // Size of sine movement
+    public float frequency;  // Speed of sine movement
+    public float magnitude;   // Size of sine movement
     private Vector3 axis;
 
     private Vector3 pos;
@@ -15,14 +15,17 @@ public class projectileSin : MonoBehaviour
     void Start()
     {
         pos = transform.position;
-  
-        axis = transform.up;  // May or may not be the axis you want
+
+        // The direction of the wave, up = up and down, right = left and right
+        axis = transform.up;
 
     }
 
     void Update()
     {
+        //The direction of travel, -MoveSpeed = left
         pos += transform.right * Time.deltaTime * -MoveSpeed;
+
         transform.position = pos + axis * Mathf.Sin(Time.time * frequency) * magnitude;
     }
 

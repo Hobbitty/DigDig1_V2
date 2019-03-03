@@ -45,10 +45,10 @@ public class PlayerMovement : MonoBehaviour
                 rBody.velocity = new Vector2(moveInput * moveSpeed, rBody.velocity.y);
 
                 if (moveInput < 0)
-                    transform.eulerAngles = new Vector2(0, 0);
+                    transform.eulerAngles = new Vector2(0, 180);
 
                 if (moveInput > 0)
-                    transform.eulerAngles = new Vector2(0, 180);
+                    transform.eulerAngles = new Vector2(0, 0);
             }
 
 
@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
                     isDashing = true;
                     rBody.gravityScale = 0;
                     Invoke("IsNotDashing", 0.5f);
-                    rBody.velocity = -transform.right * dashSpeed;
+                    rBody.velocity = transform.right * dashSpeed;
                 }
                 else
                 {
@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
                     isDashing = true;
                     rBody.gravityScale = 0;
                     Invoke("IsNotDashing", 0.5f);
-                    rBody.velocity = -transform.right * dashSpeed;
+                    rBody.velocity = transform.right * dashSpeed;
                 }
             }
         }

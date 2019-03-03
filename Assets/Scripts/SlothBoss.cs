@@ -150,7 +150,7 @@ public class SlothBoss : MonoBehaviour
             {
                 isSleeping = true;
                 sleepingTimer = sleepingFrequency / 4;
-                Instantiate(sleepingParticlesSloth, transform.position, transform.rotation);
+                Instantiate(sleepingParticlesSloth, transform.position, Quaternion.Euler(-120, 90, 0)) ;
             }
 
             if (canAttack == true)
