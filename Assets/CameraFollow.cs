@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-
+    public float cameraYPosition;
     public Transform playerTank;
+    public float cameraYValue;
+    
 
     private void FixedUpdate()
     {
-        transform.position = new Vector3(playerTank.position.x, playerTank.position.y, -1);
+        cameraYPosition = playerTank.position.y + cameraYValue;
+        transform.position = new Vector3(playerTank.position.x, cameraYPosition, -1);
+        
     }
 
 }

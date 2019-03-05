@@ -36,12 +36,12 @@ public class flyingEnemyMovement : MonoBehaviour
                 if (left == true)
                 {
                     rBody.velocity = -(Vector2)transform.right * Time.deltaTime * speed;
-                    transform.localScale = new Vector3(1, 1, 1);
+                    transform.localScale = new Vector3(0.5f, 0.4f, 0.5f);
                 }
                 else
                 {
                     rBody.velocity = (Vector2)transform.right * Time.deltaTime * speed;
-                    transform.localScale = new Vector3(-1, 1, 1);
+                    transform.localScale = new Vector3(-0.5f, 0.4f, 0.5f);
                 }
 
             }
