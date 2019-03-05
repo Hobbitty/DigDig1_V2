@@ -5,7 +5,6 @@ using UnityEngine;
 public class RegularHPReg : MonoBehaviour
 {
     public PlayerHP playerHP;
-    public bool touchesPlayer;
     public float addHP;
 
     private void OnTriggerEnter2D(Collider2D collision)

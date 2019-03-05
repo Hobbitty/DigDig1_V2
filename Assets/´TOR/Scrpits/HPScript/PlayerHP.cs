@@ -12,6 +12,7 @@ public class PlayerHP : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
     public string deathScene;
+    public float maxHearts;
 
     void Update()
     {
