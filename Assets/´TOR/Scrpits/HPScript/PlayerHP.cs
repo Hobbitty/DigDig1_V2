@@ -11,8 +11,8 @@ public class PlayerHP : MonoBehaviour
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
-    public string deathScene;
     public float maxHearts;
+    public string deathScene;
 
     void Update()
     {
@@ -52,6 +52,8 @@ public class PlayerHP : MonoBehaviour
         if (hP <= 0)
         {
             SceneManager.LoadScene(deathScene);
+
+            Debug.Log("Dead");
         }
     }
 }

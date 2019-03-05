@@ -26,7 +26,7 @@ public class ExtraHeart : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Max Hearts reached");
+                    Debug.Log("Max Hearts reached")
                 }
             }
         }
