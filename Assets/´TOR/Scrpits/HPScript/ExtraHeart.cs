@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ExtraHeart : MonoBehaviour
 {
-
     public PlayerHP playerHP;
     public float addHeart;
 
@@ -26,7 +25,15 @@ public class ExtraHeart : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Max Hearts reached")
+                    if (playerHP.numberOfHearts > 10)
+                    {
+                        playerHP.numberOfHearts = 10;
+                        Debug.Log("Max Hearts reahced");
+                    }
+                    else
+                    {
+                        Debug.Log("Max Hearts reached");
+                    }
                 }
             }
         }

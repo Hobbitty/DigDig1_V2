@@ -51,6 +51,8 @@ public class PlayerHP : MonoBehaviour
     {
         if (hP <= 0)
         {
+            numberOfHearts = numberOfHearts - 1;
+
             SceneManager.LoadScene(deathScene);
 
             Debug.Log("Dead");
