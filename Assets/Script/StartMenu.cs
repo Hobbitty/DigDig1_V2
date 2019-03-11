@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
-
     public void StartGame()
     {
         Debug.Log("Start game...");
