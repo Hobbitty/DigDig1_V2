@@ -10,7 +10,7 @@ public class playerMovement : MonoBehaviour
     public float horizontalMovement;
     public float jumpHeight;
     public static bool playerIsAlive;
-    
+
 
 
     void Start()
@@ -24,7 +24,7 @@ public class playerMovement : MonoBehaviour
         {
             if (enemyAttack.IsKnockbacked == false)
             {
-                
+
                 rbody.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rbody.velocity.y);
                 horizontalMovement = Input.GetAxis("Horizontal");
 
@@ -33,7 +33,6 @@ public class playerMovement : MonoBehaviour
                     rbody.velocity = new Vector2(rbody.velocity.x, jumpHeight);
                 }
             }
-
         }
 
     }

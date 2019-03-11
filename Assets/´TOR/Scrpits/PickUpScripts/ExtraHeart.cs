@@ -8,7 +8,6 @@ public class ExtraHeart : MonoBehaviour
     public float addHeart;
     public bool allowHp;
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
