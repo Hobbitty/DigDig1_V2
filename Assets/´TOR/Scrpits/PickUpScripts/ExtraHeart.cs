@@ -28,7 +28,7 @@ public class ExtraHeart : MonoBehaviour
                     if (playerHP.numberOfHearts > 10)
                     {
                         playerHP.numberOfHearts = 10;
-                        Debug.Log("Max Hearts reahced");
+                        Debug.Log("Max Hearts reached");
                     }
                     else
                     {
