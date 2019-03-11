@@ -15,6 +15,7 @@ TagManager:
   - player
   - invisiblewall
   - DamageFlash
+  - EnemyHurtBox
   layers:
   - Default
   - TransparentFX

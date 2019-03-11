@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 5719097626373544964}
   - component: {fileID: 2800768319562061417}
   - component: {fileID: 8250748365877229360}
+  - component: {fileID: 509304595}
   m_Layer: 0
   m_Name: Billy
   m_TagString: Player
@@ -289,8 +290,8 @@ MonoBehaviour:
   jumpHeight: 10
   currentJumpTime: 0
   maxJumpTime: 0.35
-  moveSpeed: 5
-  dashSpeed: 10
+  moveSpeed: 8
+  dashSpeed: 14
   gravity: 0
   iG: {fileID: 8483685397304587774}
 --- !u!114 &8250748365877229360
@@ -320,7 +321,28 @@ MonoBehaviour:
   - {fileID: 1640326620417856196}
   fullHeart: {fileID: 21300000, guid: 8b6854943c1e9f843a17b1f57f8424bc, type: 3}
   emptyHeart: {fileID: 21300000, guid: 9aea8a47855efb64fb0122f6bda6b0b1, type: 3}
-  deathScene: DeathScene
+--- !u!114 &509304595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7285945204729540855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ea0b972dc55174eb46d61d4ebfa88e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 10
+  currentHP: 0
+  healthPoints: 0
+  damageFlash: {fileID: 4251128409203803454, guid: d1b98891035acc04fa4d0c58896bc147,
+    type: 3}
+  deathScene: boss1_test
+  mercyTimer: 0
+  mercyFrequency: 2
+  canBeDamaged: 0
+  invincibleColor: {r: 1, g: 1, b: 1, a: 0.39215687}
 --- !u!1001 &9181410853997709463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -437,6 +459,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355754759439896420, guid: 284ead6290e258b419aee613b47bc0c5,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 284ead6290e258b419aee613b47bc0c5, type: 3}

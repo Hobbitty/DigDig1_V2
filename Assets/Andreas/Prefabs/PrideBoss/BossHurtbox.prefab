@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6682447413596588873}
   m_Layer: 0
   m_Name: BossHurtbox
-  m_TagString: Untagged
+  m_TagString: EnemyHurtBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

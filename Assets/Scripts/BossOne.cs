@@ -146,7 +146,6 @@ public class BossOne : MonoBehaviour
             lastAttackTimer -= Time.deltaTime;
             if (lastAttackTimer <= 0)
             {
-                print("done attacking");
                 doneAttacking = true;
                 isAttacking = false;
                 isMoving = true;
@@ -158,8 +157,6 @@ public class BossOne : MonoBehaviour
             }
         }
     }
-
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -184,8 +181,6 @@ public class BossOne : MonoBehaviour
 
         if (collision.gameObject.tag == "Wall")
         {
-            print(collision.gameObject.tag);
-
             if (isLeft == true)
                 isLeft = false;
             else
