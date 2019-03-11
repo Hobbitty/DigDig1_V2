@@ -8,6 +8,13 @@ TagManager:
   - Heart
   - PlayerHurtBox
   - Boss
+  - Wall
+  - Enemy
+  - Ground
+  - Parent
+  - player
+  - invisiblewall
+  - DamageFlash
   layers:
   - Default
   - TransparentFX

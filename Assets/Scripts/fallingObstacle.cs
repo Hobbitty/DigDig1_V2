@@ -12,14 +12,7 @@ public class fallingObstacle : MonoBehaviour
     {
         spriteDecider = Random.Range(1, 5);
 
-        if (spriteDecider == 1)
-            GetComponent<SpriteRenderer>().sprite = books[0];
-        if (spriteDecider == 2)
-            GetComponent<SpriteRenderer>().sprite = books[1];
-        if (spriteDecider == 3)
-            GetComponent<SpriteRenderer>().sprite = books[2];
-        if (spriteDecider == 4)
-            GetComponent<SpriteRenderer>().sprite = books[3];
+        GetComponent<SpriteRenderer>().sprite = books[spriteDecider - 1];
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
