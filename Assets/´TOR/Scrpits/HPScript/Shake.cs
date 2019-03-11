@@ -24,7 +24,6 @@ public class Shake : MonoBehaviour
     }
     void Hurt()
     {
-
         float lowHealth = playerHP.numberOfHearts / 2;
 
         if (playerHP.hP <= lowHealth)
