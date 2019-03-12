@@ -18,7 +18,11 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (moveSpeed <= 0)
+            transform.eulerAngles = new Vector2(0, 0);
+        else
+            transform.eulerAngles = new Vector2(0, 180);
+
     }
 
     private void FixedUpdate()
