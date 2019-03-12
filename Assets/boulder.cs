@@ -21,7 +21,7 @@ public class boulder : MonoBehaviour
     {
         if (playerPos.position.x >= dropZone)
         {
-            transform.localRotation = ()
+            //transform.localRotation = ()
             rBody.bodyType = RigidbodyType2D.Dynamic;
             if (boulderIsGrounded == true)
             {
