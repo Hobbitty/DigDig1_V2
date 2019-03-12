@@ -95,6 +95,6 @@ public class enemyAttack : MonoBehaviour
 
     void HP()
     {
-        currentPlayerHp = playerHP.hP;
+        //currentPlayerHp = playerHP.hP;
     }
 }
