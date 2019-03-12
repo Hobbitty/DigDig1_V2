@@ -20,14 +20,21 @@ public class PlayerMovement : MonoBehaviour
     private bool isDashing;
     private bool canDash;
     private int dashCounter;
+    
     [Space]
     [Header("Other")]
     public float gravity;
     private Rigidbody2D rBody;
     public IsGrounded iG;
 
+    [Space]
+    [Header("Animation")]
+    public Animator playerAnimator;
+    public float horizontalMovement;
+
     private void Start()
     {
+        isJumping = false;
         dashCounter = 0;
         rBody = GetComponent<Rigidbody2D>();
         gravity = rBody.gravityScale;
@@ -36,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if (enemyAttack.IsKnockbacked || PlayerKnockback.IsKnockbacked == false)
+        if (enemyAttack.IsKnockbacked || PlayerKnockback.IsKnockbacked == false && lvl1Transition.frozen == false)
         {
             Jump();
             if (isDashing == false)
@@ -51,6 +58,19 @@ public class PlayerMovement : MonoBehaviour
                     transform.eulerAngles = new Vector2(0, 0);
             }
 
+            if(rBody.velocity.y == 0)
+            {
+              playerAnimator.SetBool("isJumping", false);
+            }
+            if (rBody.velocity.y > 0)
+            {
+                playerAnimator.SetBool("isJumping", true);
+            }
+
+            horizontalMovement = Input.GetAxis("Horizontal");
+            playerAnimator.SetFloat("Horizontal", (Mathf.Abs(horizontalMovement)));
+        
+            
 
             if (dashCounter == 1)
                 canDash = false;
@@ -96,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
 
-        if (enemyAttack.IsKnockbacked || PlayerKnockback.IsKnockbacked == false)
+        if (enemyAttack.IsKnockbacked && PlayerKnockback.IsKnockbacked == false && lvl1Transition.frozen == false)
         {
             if (Input.GetKeyDown(KeyCode.Space) && iG.isGrounded == true)
             {

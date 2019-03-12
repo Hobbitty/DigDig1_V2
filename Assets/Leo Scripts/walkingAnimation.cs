@@ -15,6 +15,10 @@ public class walkingAnimation : MonoBehaviour
 
     void Update()
     {
+        if(lvl1Transition.frozen == true)
+        {
+            horizontalMovement = 0;
+        }
         horizontalMovement = Input.GetAxis("Horizontal");
         playerAnimator.SetFloat("Horizontal", (Mathf.Abs(horizontalMovement)));
     }
