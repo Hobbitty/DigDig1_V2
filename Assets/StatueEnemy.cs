@@ -25,7 +25,7 @@ public class StatueEnemy : MonoBehaviour
 
         if(fireTimer <= 0)
         {
-            Instantiate(fireProjectile, transform.position, transform.rotation);
+            Instantiate(fireProjectile, new Vector2(transform.position.x - 2, transform.position.y), transform.rotation);
             fireTimer = fireFrequency;
         }
     }
