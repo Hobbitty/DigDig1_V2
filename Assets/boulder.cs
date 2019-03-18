@@ -10,7 +10,7 @@ public class boulder : MonoBehaviour
     public float dropZone;
     bool boulderIsGrounded = false;
     public float speed;
-    public float spinningSpeed;
+ 
 
     void Start()
     {
@@ -19,15 +19,17 @@ public class boulder : MonoBehaviour
 
     void Update()
     {
+     
+
         if (playerPos.position.x >= dropZone)
         {
-            //transform.localRotation = ()
+          
             rBody.bodyType = RigidbodyType2D.Dynamic;
             if (boulderIsGrounded == true)
             {
                 rBody.velocity = (Vector2)transform.right * Time.deltaTime * speed;
                 transform.localScale = new Vector3(6, 6, 6);
-
+               
             }
         }
     }
