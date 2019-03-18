@@ -2792,6 +2792,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTank: {fileID: 1488714550}
+  bounds: 1
+  minCamPos: {x: 0, y: 0, z: 0}
+  maxCamPos: {x: 0, y: 0, z: 0}
 --- !u!1001 &1716710778
 PrefabInstance:
   m_ObjectHideFlags: 0

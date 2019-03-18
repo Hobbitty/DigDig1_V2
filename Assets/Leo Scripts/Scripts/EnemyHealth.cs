@@ -32,7 +32,6 @@ public class EnemyHealth : MonoBehaviour
         if (healthPoints <= 0)
         {
             Destroy(gameObject);
-            print("enemy killed");
             DeathEffect();
         }
     }
@@ -41,7 +40,6 @@ public class EnemyHealth : MonoBehaviour
     {
         if (collision.gameObject.tag == "PlayerHurtBox")
         {
-            print("enemy hit");
             AttackPhysics wep = collision.gameObject.GetComponent<AttackPhysics>();
             healthPoints -= wep.damage;
 

@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 5719097626373544964}
   - component: {fileID: 1488714551}
   - component: {fileID: 1893483715}
+  - component: {fileID: 4584262355573039083}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -304,9 +305,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a363252f78bff4ebc91b886bceba5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hP: 10
-  numberOfHearts: 10
-  hearts: []
+  hP: 7
+  numberOfHearts: 7
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   fullHeart: {fileID: 21300000, guid: 8b6854943c1e9f843a17b1f57f8424bc, type: 3}
   emptyHeart: {fileID: 21300000, guid: 9aea8a47855efb64fb0122f6bda6b0b1, type: 3}
+  maxHearts: 10
   deathScene: 
+--- !u!114 &4584262355573039083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7285945204729540855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139eda974132a784fae591f099a7deaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashSpeed: 0

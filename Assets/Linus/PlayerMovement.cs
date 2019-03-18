@@ -17,9 +17,9 @@ public class PlayerMovement : MonoBehaviour
     [Space]
     [Header("Dash")]
     public float dashSpeed;
-    private bool isDashing;
-    private bool canDash;
-    private int dashCounter;
+    public bool isDashing;
+    public bool canDash;
+    public int dashCounter;
 
     [Space]
     [Header("Other")]

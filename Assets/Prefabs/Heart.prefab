@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5132830292938758293}
   - component: {fileID: 5132830292938758295}
   - component: {fileID: 5132830292938758294}
-  - component: {fileID: 5132830292938758288}
   m_Layer: 5
   m_Name: Heart
   m_TagString: Heart
@@ -75,19 +74,3 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &5132830292938758288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5132830292938758292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d713d352ed31ace479d87b715fa23153, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shakeSpeed: 0
-  shakeAmount: 0
-  playerHP: {fileID: 1819033644862715358, guid: bed4402bb625f7d4fb0ad507031e0b2a,
-    type: 3}
