@@ -8,7 +8,6 @@ public class TakingDamage : MonoBehaviour
     [Header("HealthValues")]
     public int maxHP;
     public int currentHP;
-    public int healthPoints;
     [Header("GameObjects")]
     public GameObject damageFlash;
     [Header("Death")]

@@ -23,7 +23,7 @@ public class PlayerHP : MonoBehaviour
         HeartNumber();
 
         TakingDamage healthLoss = GetComponent<TakingDamage>();
-        numberOfHearts = healthLoss.currentHP;
+        numberOfHearts = healthLoss.maxHP;
         hP = healthLoss.currentHP;
     }
 
