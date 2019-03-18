@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHP : MonoBehaviour
@@ -10,21 +11,13 @@ public class PlayerHP : MonoBehaviour
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
-
-    void Start()
-    {
-        TakingDamage healthLoss = GetComponent<TakingDamage>();
-        numberOfHearts = healthLoss.maxHP;
-        hP = healthLoss.maxHP;
-    }
+    public float maxHearts;
+    public string deathScene;
 
     void Update()
     {
         HeartNumber();
-
-        TakingDamage healthLoss = GetComponent<TakingDamage>();
-        numberOfHearts = healthLoss.currentHP;
-        hP = healthLoss.currentHP;
+        Dead();
     }
 
     void HeartNumber()
@@ -52,6 +45,17 @@ public class PlayerHP : MonoBehaviour
             {
                 hearts[i].enabled = false;
             }
+        }
+    }
+    void Dead()
+    {
+        if (hP <= 0)
+        {
+            numberOfHearts = numberOfHearts - 1;
+
+            SceneManager.LoadScene(deathScene);
+
+            Debug.Log("Dead");
         }
     }
 }
