@@ -8,37 +8,44 @@ public class platformEnemyScript : MonoBehaviour
     public bool left;
     public Rigidbody2D rBody;
     public int speed;
-    
+    public static bool active;
+
 
     void Start()
     {
-        
+        active = false;
     }
 
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "invisiblewall")
-        {
-            left = !left;
-        }
+      
+            if (collision.tag == "invisiblewall")
+            {
+                left = !left;
+            }
+
     }
 
     private void FixedUpdate()
     {
-        if(left == true)
+        if (active == true)
         {
-            rBody.velocity = -(Vector2)transform.right * Time.deltaTime * speed;
-            transform.localScale = new Vector3(1, 1, 1);
+            if (left == true)
+            {
+                rBody.velocity = -(Vector2)transform.right * Time.deltaTime * speed;
+                transform.localScale = new Vector3(1, 1, 1);
+            }
+            else
+            {
+                rBody.velocity = (Vector2)transform.right * Time.deltaTime * speed;
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
         }
-        else
-        {
-            rBody.velocity = (Vector2)transform.right * Time.deltaTime * speed;
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
+
     }
 }

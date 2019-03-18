@@ -59,7 +59,7 @@ public class enemyAttack : MonoBehaviour
         {
             if (IsKnockbacked == false)
             {
-                playerHP.hP = currentPlayerHp - (enemyBaseDmg * dmgMultiplier);
+                //playerHP.hP = currentPlayerHp - (enemyBaseDmg * dmgMultiplier);
                 print("Player Has Been Damaged");
             }
 

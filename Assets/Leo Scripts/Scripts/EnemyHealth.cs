@@ -15,6 +15,7 @@ public class EnemyHealth : MonoBehaviour
     private SpriteRenderer spriteRendEnemy;
     private Color enemyColor;
     private Color hitColor = Color.black;
+    private int timer = 0;
 
 
     // Start is called before the first frame update
@@ -47,6 +48,14 @@ public class EnemyHealth : MonoBehaviour
             StartCoroutine(Flash());
 
             rbodyEnemy.AddForce(new Vector2(knockbackX, knockbackY));
+
+            platformEnemyScript.active = false;
+            timer = timer + 1;
+            if(timer > 1)
+            {
+                platformEnemyScript.active = true;
+                timer = 0;
+            }
         }
 
     }
