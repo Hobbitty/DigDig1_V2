@@ -33,8 +33,7 @@ public class platformEnemyScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (active == true)
-        {
+        
             if (left == true)
             {
                 rBody.velocity = -(Vector2)transform.right * Time.deltaTime * speed;
@@ -45,7 +44,7 @@ public class platformEnemyScript : MonoBehaviour
                 rBody.velocity = (Vector2)transform.right * Time.deltaTime * speed;
                 transform.localScale = new Vector3(-1, 1, 1);
             }
-        }
+        
 
     }
 }

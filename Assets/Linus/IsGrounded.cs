@@ -11,6 +11,7 @@ public class IsGrounded : MonoBehaviour
     {
         if (collision.tag == "Ground")
             touches += 1;
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
