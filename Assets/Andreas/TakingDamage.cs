@@ -69,6 +69,18 @@ public class TakingDamage : MonoBehaviour
             Vector3 camTank = camera.transform.position;
             Instantiate(damageFlash, new Vector3(camTank.x, camTank.y, 0), transform.rotation);
         }
+
+        if (collision.gameObject.tag == "Enemy" && canBeDamaged == true)
+        {
+            print("player damaged collider");
+            currentHP--;
+
+            canBeDamaged = false;
+
+            Camera camera = Camera.main;
+            Vector3 camTank = camera.transform.position;
+            Instantiate(damageFlash, new Vector3(camTank.x, camTank.y, 0), transform.rotation);
+        }
     }
 
     void Dead()
