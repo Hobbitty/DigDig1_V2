@@ -291,7 +291,7 @@ MonoBehaviour:
   jumpHeight: 10
   currentJumpTime: 0
   maxJumpTime: 0.35
-  moveSpeed: 8
+  moveSpeed: 12
   dashSpeed: 14
   isDashing: 0
   canDash: 0

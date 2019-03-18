@@ -59,7 +59,8 @@ public class TakingDamage : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Boss" && canBeDamaged == true)
+        if (collision.gameObject.tag == "Boss" && canBeDamaged == true
+            || collision.gameObject.tag == "Enemy " && canBeDamaged == true)
         {
             print("player damaged collider");
             currentHP--;
