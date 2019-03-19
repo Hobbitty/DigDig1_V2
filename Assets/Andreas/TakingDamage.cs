@@ -16,10 +16,12 @@ public class TakingDamage : MonoBehaviour
     public float mercyTimer;
     public float mercyFrequency;
     public bool canBeDamaged;
+
     public Color invincibleColor;
 
     private Color mainColor;
     private SpriteRenderer playerRend;
+    public bool debugInvincibility;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,8 @@ public class TakingDamage : MonoBehaviour
     {
         MercyInvincibility();
         Dead();
+
+        DebugInvincibility();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -58,7 +62,8 @@ public class TakingDamage : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Boss" && canBeDamaged == true)
+        if (collision.gameObject.tag == "Boss" && canBeDamaged == true
+            || collision.gameObject.tag == "Enemy " && canBeDamaged == true)
         {
             print("player damaged collider");
             currentHP--;
@@ -93,7 +98,7 @@ public class TakingDamage : MonoBehaviour
 
     void MercyInvincibility()
     {
-        if (canBeDamaged == false)
+        if (canBeDamaged == false && debugInvincibility == false)
         {
             mercyTimer -= Time.deltaTime;
 
@@ -106,5 +111,15 @@ public class TakingDamage : MonoBehaviour
             mercyTimer = mercyFrequency;
             playerRend.color = mainColor;
         }
+    }
+
+    void DebugInvincibility()
+    {
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            debugInvincibility = !debugInvincibility;
+            canBeDamaged = !debugInvincibility;
+        }
+
     }
 }
