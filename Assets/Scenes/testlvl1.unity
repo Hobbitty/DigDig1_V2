@@ -757,21 +757,6 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1550940926}
-    - target: {fileID: 7024926596756973601, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
-        type: 3}
-      propertyPath: rBody
-      value: 
-      objectReference: {fileID: 1565188891}
-    - target: {fileID: 7024926596756973601, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
-        type: 3}
-      propertyPath: speed
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 7024926596756973601, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
-        type: 3}
-      propertyPath: mobAlive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7024926596756973606, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
         type: 3}
       propertyPath: playerSprite
@@ -791,6 +776,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7024926596756973601, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
+        type: 3}
+      propertyPath: rBody
+      value: 
+      objectReference: {fileID: 1565188891}
+    - target: {fileID: 7024926596756973601, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
+        type: 3}
+      propertyPath: speed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7024926596756973601, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
+        type: 3}
+      propertyPath: mobAlive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f, type: 3}
@@ -901,6 +901,8 @@ MonoBehaviour:
   fadeIn: 0
   timer2: 0
   cameraShake: {fileID: 0}
+  timer3: 0
+  sceneToLoad: level1
 --- !u!4 &646386665
 Transform:
   m_ObjectHideFlags: 0
@@ -1265,9 +1267,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0fe35fa715a3a648ad433a4ee7cda26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraYPosition: 0
   playerTank: {fileID: 1550940926}
-  cameraYValue: 2.3
+  bounds: 0
+  minCamPos: {x: 0, y: 0, z: 0}
+  maxCamPos: {x: 0, y: 0, z: 0}
+  CameraYMinPos: 2.3
 --- !u!1 &1078211303
 GameObject:
   m_ObjectHideFlags: 0
@@ -2252,6 +2256,11 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 0.0001
       objectReference: {fileID: 0}
+    - target: {fileID: 3532695654165062629, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2856256911741559198, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2331,10 +2340,15 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 3532695654165062629, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
+    - target: {fileID: 2800768319562061417, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
         type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 1550940927}
+    - target: {fileID: 2800768319562061417, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8483685397304587774, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
         type: 3}

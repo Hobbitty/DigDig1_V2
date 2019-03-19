@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class lvl1Transition : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class lvl1Transition : MonoBehaviour
     public cameraShake cameraShake;
     public static bool doShake;
     public float timer3;
+    public string sceneToLoad = "level1";
 
 
     void Start()
@@ -61,6 +63,11 @@ public class lvl1Transition : MonoBehaviour
             if (timer3 >= 2f)
             {
                 doShake = true;
+            }
+
+            if(timer3 >= 3)
+            {
+                SceneManager.LoadScene(sceneToLoad);
             }
 
             timer = timer + 1 * Time.deltaTime;
