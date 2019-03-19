@@ -41,7 +41,7 @@ public class PlayerAttack : MonoBehaviour
         CanAttackDown();
         Attacking();
         AttackingCooldown();
-        //RangedAttack();
+        RangedAttack();
     }
 
     void Attacking()

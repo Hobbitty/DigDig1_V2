@@ -118,6 +118,8 @@ GameObject:
   - component: {fileID: 2800768319562061417}
   - component: {fileID: 8250748365877229360}
   - component: {fileID: 509304595}
+  - component: {fileID: 243019576}
+  - component: {fileID: 243019578}
   m_Layer: 0
   m_Name: Billy
   m_TagString: Player
@@ -293,11 +295,11 @@ MonoBehaviour:
   moveSpeed: 12
   dashSpeed: 14
   isDashing: 0
-  canDash: 0
+  canDash: 1
   dashCounter: 0
   gravity: 0
   iG: {fileID: 8483685397304587774}
-  playerAnimator: {fileID: 0}
+  playerAnimator: {fileID: 243019576}
   horizontalMovement: 0
 --- !u!114 &8250748365877229360
 MonoBehaviour:
@@ -348,9 +350,47 @@ MonoBehaviour:
   deathScene: boss1_test
   mercyTimer: 0
   mercyFrequency: 2
-  canBeDamaged: 0
+  canBeDamaged: 1
   invincibleColor: {r: 1, g: 1, b: 1, a: 0.39215687}
   debugInvincibility: 0
+--- !u!95 &243019576
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7285945204729540855}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 74a8d8c6bafd5264083538a450512742, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &243019578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7285945204729540855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa125e21b5b58d74aaf9ddd22e1f1804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hP: 5
+  numberOfHearts: 5
+  hearts: []
+  fullHeart: {fileID: 21300000, guid: 8b6854943c1e9f843a17b1f57f8424bc, type: 3}
+  emptyHeart: {fileID: 21300000, guid: 9aea8a47855efb64fb0122f6bda6b0b1, type: 3}
+  maxHearts: 0
+  deathScene: 
 --- !u!1001 &9181410853997709463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -358,6 +398,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2856256911741559198}
     m_Modifications:
+    - target: {fileID: 3355754759439896423, guid: 284ead6290e258b419aee613b47bc0c5,
+        type: 3}
+      propertyPath: m_Name
+      value: HPCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 3355754759439896419, guid: 284ead6290e258b419aee613b47bc0c5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -462,11 +507,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3355754759439896423, guid: 284ead6290e258b419aee613b47bc0c5,
-        type: 3}
-      propertyPath: m_Name
-      value: HPCanvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 284ead6290e258b419aee613b47bc0c5, type: 3}

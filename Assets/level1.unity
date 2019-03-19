@@ -395,12 +395,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5067438846ae7f4bb0f8d504c4d27e7, type: 3}
---- !u!1 &243019568 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7285945204729540855, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1158438430}
-  m_PrefabAsset: {fileID: 0}
 --- !u!50 &243019573 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 2704214739905527137, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
@@ -419,44 +413,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1158438430}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &243019576
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 243019568}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 74a8d8c6bafd5264083538a450512742, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &243019578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 243019568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa125e21b5b58d74aaf9ddd22e1f1804, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hP: 5
-  numberOfHearts: 5
-  hearts: []
-  fullHeart: {fileID: 21300000, guid: 8b6854943c1e9f843a17b1f57f8424bc, type: 3}
-  emptyHeart: {fileID: 21300000, guid: 9aea8a47855efb64fb0122f6bda6b0b1, type: 3}
-  maxHearts: 0
-  deathScene: 
 --- !u!1 &323263387 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5664008416543127970, guid: b42aa802c1fe5d040a3b37706a73ef37,
@@ -45061,55 +45017,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1488714551, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
-      propertyPath: maxJumpTime
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1488714551, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
-      propertyPath: jumpHeight
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1488714551, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
-      propertyPath: moveSpeed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1488714551, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
-      propertyPath: playerAnimator
-      value: 
-      objectReference: {fileID: 243019576}
-    - target: {fileID: 1488714551, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
-      propertyPath: dashSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3214723627254555713, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2089099977472053459, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 2139349498306192513, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 2800768319562061417, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
-        type: 3}
-      propertyPath: playerAnimator
-      value: 
-      objectReference: {fileID: 243019576}
-    - target: {fileID: 2800768319562061417, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
-        type: 3}
-      propertyPath: canDash
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 509304595, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
-      propertyPath: canBeDamaged
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
