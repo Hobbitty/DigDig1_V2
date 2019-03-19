@@ -44,6 +44,7 @@ public class ExtraHeart : MonoBehaviour
         HealAllow();
     }
 
+    //Bara för testing
     public void HealAllow()
     {
         if (Input.GetKeyDown(KeyCode.E))
