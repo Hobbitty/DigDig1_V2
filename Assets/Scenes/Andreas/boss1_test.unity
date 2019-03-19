@@ -277,6 +277,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 509304595, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
+      propertyPath: mercyFrequency
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2856256911741559198, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -347,10 +351,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 589696787}
-    - target: {fileID: 509304595, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
-      propertyPath: mercyFrequency
-      value: 1.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
 --- !u!1001 &525901253
@@ -1163,6 +1163,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5afdb9e12a6bc164c8f5b1c89bab9264, type: 3}
+--- !u!198 &1306353775 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 605173173200708013, guid: f5cd46d8af7f4a141ae05d94239272f7,
+    type: 3}
+  m_PrefabInstance: {fileID: 85752020247766721}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1672263665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,5 +1426,9 @@ PrefabInstance:
       propertyPath: healthPoints
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 524647869, guid: 0ec7796de47d10b489e8628983296201, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 1306353775}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ec7796de47d10b489e8628983296201, type: 3}
