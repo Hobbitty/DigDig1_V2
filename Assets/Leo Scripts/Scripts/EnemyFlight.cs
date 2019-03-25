@@ -23,7 +23,6 @@ public class EnemyFlight : MonoBehaviour
     void Update()
     {
         currentPos = transform.position;
-
     }
 
     private void FixedUpdate()

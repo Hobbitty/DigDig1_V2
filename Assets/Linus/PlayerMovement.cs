@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Movement")]
     public float moveSpeed;
-    private float moveInput;
+    public float moveInput;
     [Space]
     [Header("Dash")]
     public float dashSpeed;
