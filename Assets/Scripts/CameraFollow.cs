@@ -11,11 +11,15 @@ public class CameraFollow : MonoBehaviour
 
     public Vector3 minCamPos;
     public Vector3 maxCamPos;
+    private Vector2 CameraYPos;
+    public float CameraYMinPos;
 
 
     private void FixedUpdate()
     {
-        transform.position = new Vector3(playerTank.position.x, playerTank.position.y, -1);
+        CameraYPos.y = playerTank.position. y + CameraYMinPos;
+
+        transform.position = new Vector3(playerTank.position.x, CameraYPos.y, -1);
 
         if (bounds == true)
         {
