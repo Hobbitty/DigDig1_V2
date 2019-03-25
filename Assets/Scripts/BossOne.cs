@@ -137,7 +137,7 @@ public class BossOne : MonoBehaviour
                 for (int f = 0; f < NumOfFallingObjects; f++)
                 {
                     Instantiate(fallingObject,
-                    new Vector3(Random.Range(-fallingObjSpawnPointsMin, fallingObjSpawnPointsMax), 16), transform.rotation);
+                    new Vector3(Random.Range(fallingObjSpawnPointsMin, fallingObjSpawnPointsMax), 16), transform.rotation);
                 }
                 attackTimer = attackFrequency;
                 numberOfAttacks++;
@@ -171,7 +171,7 @@ public class BossOne : MonoBehaviour
             for (int i = 0; i < NumOfFallingObjects + 1; i++)
             {
                 Instantiate(fallingObject,
-                    new Vector3(Random.Range(-fallingObjSpawnPointsMin, fallingObjSpawnPointsMax), 16), transform.rotation);
+                    new Vector3(Random.Range(fallingObjSpawnPointsMin, fallingObjSpawnPointsMax), 16), transform.rotation);
             }
 
             if (isLeft == true)
