@@ -6,27 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/testlvl1.unity
+    path: "Assets/Scenes/50ProcentInl\xE4mning/testlvl1.unity"
     guid: fc59e0bcf4d74d146aac3ed5789452d0
   - enabled: 1
     path: Assets/level1.unity
     guid: e7f374f645088484d80be586a98ee7e3
   - enabled: 1
-    path: Assets/Scenes/HPTests/Tor.unity
-    guid: faffc7876b4649a46a8b4db63c31c12e
-  - enabled: 1
-    path: Assets/Scenes/DeathScene.unity
-    guid: 9edb58518ed22da42b5d540524802d77
-  - enabled: 1
-    path: Assets/Scenes/HPTests/Tor.unity
-    guid: faffc7876b4649a46a8b4db63c31c12e
-  - enabled: 1
-    path: Assets/Scenes/DeathScene.unity
-    guid: 9edb58518ed22da42b5d540524802d77
-  - enabled: 1
     path: Assets/Scenes/Andreas/boss1_test.unity
     guid: 6f018023cf62b99428662a1ff17b6735
   - enabled: 1
-    path: Assets/Scenes/Andreas/StatueEnemy.unity
-    guid: a7046f4b4aa8ddc45a176eed91a1978b
+    path: "Assets/Scenes/50ProcentInl\xE4mning/DeathScene.unity"
+    guid: 9edb58518ed22da42b5d540524802d77
   m_configObjects: {}
