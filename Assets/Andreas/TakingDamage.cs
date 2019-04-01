@@ -8,7 +8,6 @@ public class TakingDamage : MonoBehaviour
     [Header("HealthValues")]
     public int maxHP;
     public int currentHP;
-    public int healthPoints;
     [Header("GameObjects")]
     public GameObject damageFlash;
     [Header("Death")]
@@ -65,6 +64,18 @@ public class TakingDamage : MonoBehaviour
     {
         if (collision.gameObject.tag == "Boss" && canBeDamaged == true
             || collision.gameObject.tag == "Enemy " && canBeDamaged == true)
+        {
+            print("player damaged collider");
+            currentHP--;
+
+            canBeDamaged = false;
+
+            Camera camera = Camera.main;
+            Vector3 camTank = camera.transform.position;
+            Instantiate(damageFlash, new Vector3(camTank.x, camTank.y, 0), transform.rotation);
+        }
+
+        if (collision.gameObject.tag == "Enemy" && canBeDamaged == true)
         {
             print("player damaged collider");
             currentHP--;

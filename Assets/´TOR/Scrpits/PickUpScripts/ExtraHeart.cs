@@ -4,31 +4,31 @@ using UnityEngine;
 
 public class ExtraHeart : MonoBehaviour
 {
-    public PlayerHP playerHP;
-    public float addHeart;
+    public TakingDamage takeDMG;
+    public int addHeart;
     public bool allowHp;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            if ((playerHP.hP < playerHP.numberOfHearts) && (allowHp == true))
+            if ((takeDMG.currentHP < takeDMG.maxHP) && (allowHp == true))
             {
-                playerHP.hP = playerHP.hP + 1;
+                takeDMG.currentHP = takeDMG.currentHP + 1;
                 Destroy(gameObject);
             }
             else
             {
-                if (playerHP.numberOfHearts < 10)
+                if (takeDMG.maxHP < 10)
                 {
-                    playerHP.numberOfHearts = playerHP.numberOfHearts + addHeart;
+                    takeDMG.maxHP = takeDMG.maxHP + addHeart;
                     Destroy(gameObject);
                 }
                 else
                 {
-                    if (playerHP.numberOfHearts > 10)
+                    if (takeDMG.maxHP > 10)
                     {
-                        playerHP.numberOfHearts = 10;
+                        takeDMG.maxHP = 10;
                         Debug.Log("Max Hearts reached");
                     }
                     else
@@ -44,6 +44,7 @@ public class ExtraHeart : MonoBehaviour
         HealAllow();
     }
 
+    //Bara för testing
     public void HealAllow()
     {
         if (Input.GetKeyDown(KeyCode.E))

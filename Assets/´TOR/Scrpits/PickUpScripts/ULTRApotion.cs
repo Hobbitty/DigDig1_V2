@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class ULTRApotion : MonoBehaviour
 {
-    public PlayerHP playerHP;
+    public TakingDamage takeDMG;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            playerHP.numberOfHearts = 10;
-            if (playerHP.hP < playerHP.numberOfHearts)
+            takeDMG.maxHP = 10;
+            if (takeDMG.currentHP < takeDMG.maxHP)
             {
-                playerHP.hP = playerHP.numberOfHearts;
-                if (playerHP.hP == 10)
+                takeDMG.currentHP = takeDMG.maxHP;
+                if (takeDMG.maxHP == 10)
                 {
                     Destroy(gameObject);
                 }

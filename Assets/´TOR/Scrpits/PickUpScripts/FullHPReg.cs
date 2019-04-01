@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class FullHPReg : MonoBehaviour
 {
-    public PlayerHP playerHP;
+    public TakingDamage takeDMG;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (playerHP.hP < playerHP.numberOfHearts)
+            if (takeDMG.currentHP < takeDMG.maxHP)
             {
-                playerHP.hP = playerHP.numberOfHearts;
+                takeDMG.currentHP = takeDMG.maxHP;
                 Destroy(gameObject);
             }
         }

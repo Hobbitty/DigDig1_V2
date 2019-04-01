@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class RegularHPReg : MonoBehaviour
 {
-    public PlayerHP playerHP;
-    public float addHP;
+    public int addHP = 1;
+    public TakingDamage healthLoss;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (playerHP.hP < playerHP.numberOfHearts)
+            if (healthLoss.currentHP < healthLoss.maxHP)
             {
-                playerHP.hP = playerHP.hP + addHP;
+                healthLoss.currentHP = healthLoss.currentHP + addHP;
+                Debug.Log("Healed");
                 Destroy(gameObject);
             }
         }

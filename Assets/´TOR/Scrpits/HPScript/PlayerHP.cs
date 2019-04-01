@@ -17,9 +17,13 @@ public class PlayerHP : MonoBehaviour
     void Update()
     {
         HeartNumber();
+        TakingDamage healthLoss = GetComponent<TakingDamage>();
+        maxHearts = healthLoss.maxHP;
+        numberOfHearts = healthLoss.maxHP;
+        hP = healthLoss.currentHP;
         Dead();
     }
-
+    
     void HeartNumber()
     {
         if (hP > numberOfHearts)
@@ -51,8 +55,6 @@ public class PlayerHP : MonoBehaviour
     {
         if (hP <= 0)
         {
-            numberOfHearts = numberOfHearts - 1;
-
             SceneManager.LoadScene(deathScene);
 
             Debug.Log("Dead");

@@ -150,7 +150,7 @@ MonoBehaviour:
   moveSpeed: 0
   catJump: 0
   playerTank: {x: 0, y: 0}
-  iG: {fileID: 812564652968507648}
+  groundCheck: {fileID: 812564652968507648}
 --- !u!61 &1965427228
 BoxCollider2D:
   m_ObjectHideFlags: 0
