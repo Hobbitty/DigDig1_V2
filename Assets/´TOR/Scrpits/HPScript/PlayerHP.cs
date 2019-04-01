@@ -23,7 +23,7 @@ public class PlayerHP : MonoBehaviour
         hP = healthLoss.currentHP;
         Dead();
     }
-
+    
     void HeartNumber()
     {
         if (hP > numberOfHearts)
