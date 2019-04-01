@@ -16,8 +16,7 @@ public class EnemyHealth : MonoBehaviour
     private Color enemyColor;
     private Color hitColor = Color.black;
     private int timer = 0;
-    public bool normalEnemy;
-    private Transform enemyPos;
+
 
 
     // Start is called before the first frame update
@@ -26,7 +25,7 @@ public class EnemyHealth : MonoBehaviour
         rbodyEnemy = GetComponent<Rigidbody2D>();
         spriteRendEnemy = GetComponent<SpriteRenderer>();
         enemyColor = GetComponent<SpriteRenderer>().color;
-        enemyPos = GetComponent<Transform>();
+
     }
 
     // Update is called once per frame
@@ -34,14 +33,9 @@ public class EnemyHealth : MonoBehaviour
     {
         if (healthPoints <= 0)
         {
-            if (normalEnemy == true)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                
-            }
+
+            Destroy(gameObject);
+
 
             DeathEffect();
         }
