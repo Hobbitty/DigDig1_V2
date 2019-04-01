@@ -38,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
         dashCounter = 0;
         rBody = GetComponent<Rigidbody2D>();
         gravity = rBody.gravityScale;
+
+        lvl1Transition.frozen = false;
     }
 
     private void FixedUpdate()

@@ -30,6 +30,9 @@ public class BossOne : MonoBehaviour
     public int takenDamage;
     [Header("Health")]
     public float healthTreshold;
+    [Header("After Death")]
+    public GameObject exitDoor;
+    public Vector2 doorPoint;
 
     private Rigidbody2D rbodyBoss;
 
@@ -39,9 +42,7 @@ public class BossOne : MonoBehaviour
     private bool isMoving;
     private bool isAttacking;
     private bool doneAttacking = false;
-
-
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -57,7 +58,6 @@ public class BossOne : MonoBehaviour
         takenDamage = bossHealth.healthPoints;
 
         NumOfFallingObjects = 1;
-
     }
 
     // Update is called once per frame
@@ -89,7 +89,7 @@ public class BossOne : MonoBehaviour
             takenDamage = HPDamageCheck.healthPoints;
         }
 
-
+        SpawnExitDoor();
     }
 
     void Jumping()
@@ -211,5 +211,13 @@ public class BossOne : MonoBehaviour
             isOnGround = false;
     }
 
-}
+    void SpawnExitDoor()
+    {
+        EnemyHealth bossHealth = gameObject.GetComponent<EnemyHealth>();
 
+        if (bossHealth.healthPoints <= 0)
+        {
+            Instantiate(exitDoor, doorPoint, transform.rotation);
+        }
+    }
+}
