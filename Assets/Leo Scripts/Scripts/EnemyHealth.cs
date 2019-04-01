@@ -15,6 +15,10 @@ public class EnemyHealth : MonoBehaviour
     private SpriteRenderer spriteRendEnemy;
     private Color enemyColor;
     private Color hitColor = Color.black;
+    private int timer = 0;
+    private Transform enemyPos;
+    public bool miniBossEnemy;
+
 
 
     // Start is called before the first frame update
@@ -23,14 +27,28 @@ public class EnemyHealth : MonoBehaviour
         rbodyEnemy = GetComponent<Rigidbody2D>();
         spriteRendEnemy = GetComponent<SpriteRenderer>();
         enemyColor = GetComponent<SpriteRenderer>().color;
+        enemyPos = GetComponent<Transform>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (healthPoints <= 0)
         {
-            Destroy(gameObject);
+            if (miniBossEnemy == false)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                enemyPos.position = new Vector2(100f, 100f);
+                miniBossDoor.miniBossAlive = false;
+            }
+
+
+
             DeathEffect();
         }
     }
@@ -45,6 +63,14 @@ public class EnemyHealth : MonoBehaviour
             StartCoroutine(Flash());
 
             rbodyEnemy.AddForce(new Vector2(knockbackX, knockbackY));
+
+            platformEnemyScript.active = false;
+            timer = timer + 1;
+            if (timer > 1)
+            {
+                platformEnemyScript.active = true;
+                timer = 0;
+            }
         }
 
     }

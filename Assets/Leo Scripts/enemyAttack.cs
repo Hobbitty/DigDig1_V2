@@ -16,6 +16,7 @@ public class enemyAttack : MonoBehaviour
     public Rigidbody2D rBody;
     public Vector2 knockbackDirection;
     public static bool IsKnockbacked;
+    public float knockbackAmout;
 
     public PlayerHP playerHP;
 
@@ -59,13 +60,14 @@ public class enemyAttack : MonoBehaviour
         {
             if (IsKnockbacked == false)
             {
-                playerHP.hP = currentPlayerHp - (enemyBaseDmg * dmgMultiplier);
+                //playerHP.hP = currentPlayerHp - (enemyBaseDmg * dmgMultiplier);
                 print("Player Has Been Damaged");
+                rBody.AddForce(knockbackDirection * knockbackAmout);
             }
 
             print(currentPlayerHp);
             IsKnockbacked = true;
-            rBody.AddForce(knockbackDirection * 300);
+
 
             if (playerPosition.position.x <= enemyPosition.position.x)
             {

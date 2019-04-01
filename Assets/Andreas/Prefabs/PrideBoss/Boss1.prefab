@@ -169,6 +169,8 @@ MonoBehaviour:
   numberOfAttacks: 0
   maxNumberOfAttacks: 3
   lastAttackTimer: 2
+  fallingObjSpawnPointsMin: -27
+  fallingObjSpawnPointsMax: 27
   NumOfFallingObjects: 0
   takenDamage: 0
   healthTreshold: 0
@@ -184,8 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e56aa598ee41c46849ae66ff4725d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 20
+  healthPoints: 40
   knockbackX: 0
   knockbackY: 0
-  deathEffect: {fileID: 2412277539487177613, guid: a475161edeffae74b9c5559eb87f808b,
-    type: 3}
+  deathEffect: {fileID: 1107056153, guid: 6bdf8fa329766d144a58916d1eb47957, type: 3}

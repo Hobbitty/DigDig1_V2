@@ -4,7 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags: [Heart, Heart, PlayerHurtBox, Boss, Wall, Enemy, Ground, Parent, player, invisiblewall,
-    DamageFlash, EnemyHurtBox]
+    DamageFlash, EnemyHurtBox, EnemySpawnTrigger, Heart, Heart, PlayerHurtBox, Boss,
+    Wall, Enemy, Ground, Parent, player, invisiblewall, DamageFlash, EnemyHurtBox]
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Lucifur
+  - Ground
   - 
   - 
   - 

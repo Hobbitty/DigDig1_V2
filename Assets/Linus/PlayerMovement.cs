@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Movement")]
     public float moveSpeed;
-    private float moveInput;
+    public float moveInput;
     [Space]
     [Header("Dash")]
     public float dashSpeed;
@@ -38,12 +38,14 @@ public class PlayerMovement : MonoBehaviour
         dashCounter = 0;
         rBody = GetComponent<Rigidbody2D>();
         gravity = rBody.gravityScale;
+
+        lvl1Transition.frozen = false;
     }
 
     private void FixedUpdate()
     {
 
-        if (enemyAttack.IsKnockbacked || PlayerKnockback.IsKnockbacked == false && lvl1Transition.frozen == false)
+        if (PlayerKnockback.IsKnockbacked == false && lvl1Transition.frozen == false)
         {
             Jump();
             if (isDashing == false)
@@ -116,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
 
-        if (enemyAttack.IsKnockbacked || PlayerKnockback.IsKnockbacked == false && lvl1Transition.frozen == false)
+        if (PlayerKnockback.IsKnockbacked == false && lvl1Transition.frozen == false)
         {
             if (Input.GetKeyDown(KeyCode.Space) && iG.isGrounded == true)
             {

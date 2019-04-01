@@ -51,13 +51,14 @@ public class PlayerKnockback : MonoBehaviour
         {
             if (IsKnockbacked == false)
             {
-               
+
                 print("Player Has Been Damaged");
+                rBody.AddForce(knockbackDirection * knockbackValue);
+
             }
 
-           
+
             IsKnockbacked = true;
-            rBody.AddForce(knockbackDirection * knockbackValue);
 
             if (playerPosition.position.x <= enemyPosition.position.x)
             {
@@ -73,4 +74,34 @@ public class PlayerKnockback : MonoBehaviour
         }
 
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            if (IsKnockbacked == false)
+            {
+
+                print("Player Has Been Damaged");
+                rBody.AddForce(knockbackDirection * knockbackValue);
+
+            }
+
+
+            IsKnockbacked = true;
+
+            if (playerPosition.position.x <= enemyPosition.position.x)
+            {
+                print("PlayerHasBeenKnockedBackLeft");
+
+            }
+
+            if (playerPosition.position.x > enemyPosition.position.x)
+            {
+                print("PlayerHasBeenKnockedBackRight");
+
+            }
+        }
+    }
 }
+

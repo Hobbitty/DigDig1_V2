@@ -22,11 +22,17 @@ public class BossOne : MonoBehaviour
     public int numberOfAttacks;
     public int maxNumberOfAttacks;
     public float lastAttackTimer = 2;
+    [Header("Falling Object Spawn Points")]
+    public float fallingObjSpawnPointsMin;
+    public float fallingObjSpawnPointsMax;
     [Header("Rampage")]
     public int NumOfFallingObjects;
     public int takenDamage;
     [Header("Health")]
     public float healthTreshold;
+    [Header("After Death")]
+    public GameObject exitDoor;
+    public Vector2 doorPoint;
 
     private Rigidbody2D rbodyBoss;
 
@@ -36,9 +42,7 @@ public class BossOne : MonoBehaviour
     private bool isMoving;
     private bool isAttacking;
     private bool doneAttacking = false;
-
-
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -54,7 +58,6 @@ public class BossOne : MonoBehaviour
         takenDamage = bossHealth.healthPoints;
 
         NumOfFallingObjects = 1;
-
     }
 
     // Update is called once per frame
@@ -86,7 +89,7 @@ public class BossOne : MonoBehaviour
             takenDamage = HPDamageCheck.healthPoints;
         }
 
-
+        SpawnExitDoor();
     }
 
     void Jumping()
@@ -134,7 +137,7 @@ public class BossOne : MonoBehaviour
                 for (int f = 0; f < NumOfFallingObjects; f++)
                 {
                     Instantiate(fallingObject,
-                    new Vector3(Random.Range(-10, 44), 16), transform.rotation);
+                    new Vector3(Random.Range(fallingObjSpawnPointsMin, fallingObjSpawnPointsMax), 16), transform.rotation);
                 }
                 attackTimer = attackFrequency;
                 numberOfAttacks++;
@@ -168,7 +171,7 @@ public class BossOne : MonoBehaviour
             for (int i = 0; i < NumOfFallingObjects + 1; i++)
             {
                 Instantiate(fallingObject,
-                    new Vector3(Random.Range(-10, 44), 16), transform.rotation);
+                    new Vector3(Random.Range(fallingObjSpawnPointsMin, fallingObjSpawnPointsMax), 16), transform.rotation);
             }
 
             if (isLeft == true)
@@ -208,5 +211,13 @@ public class BossOne : MonoBehaviour
             isOnGround = false;
     }
 
-}
+    void SpawnExitDoor()
+    {
+        EnemyHealth bossHealth = gameObject.GetComponent<EnemyHealth>();
 
+        if (bossHealth.healthPoints <= 0)
+        {
+            Instantiate(exitDoor, doorPoint, transform.rotation);
+        }
+    }
+}
