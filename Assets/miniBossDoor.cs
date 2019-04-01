@@ -10,6 +10,7 @@ public class miniBossDoor : MonoBehaviour
     public bool miniBossAlive;
     public BoxCollider2D door;
     public string sceneToLoad;
+    public bool ContinueOnLevel;
 
 
     void Start()
@@ -20,26 +21,34 @@ public class miniBossDoor : MonoBehaviour
 
     void Update()
     {
-       
 
-        if (miniBoss.active == true)    
+
+        if (miniBoss.active == true)
         {
             miniBossAlive = true;
         }
-            
+      
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "player" && miniBossAlive == false)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (ContinueOnLevel == false)
             {
-                SceneManager.LoadScene(sceneToLoad);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    SceneManager.LoadScene(sceneToLoad);
+                }
+            }
+            if (ContinueOnLevel == true)
+            {
+                door.enabled = false;
             }
         }
     }
 }
 
-    
+
 
