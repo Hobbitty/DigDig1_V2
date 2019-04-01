@@ -7,7 +7,7 @@ public class miniBossDoor : MonoBehaviour
 {
 
     public GameObject miniBoss;
-    public bool miniBossAlive;
+    public static bool miniBossAlive;
     public BoxCollider2D door;
     public string sceneToLoad;
     public bool ContinueOnLevel;
@@ -22,6 +22,10 @@ public class miniBossDoor : MonoBehaviour
     void Update()
     {
 
+        if(miniBossAlive == false)
+        {
+            print("miniBossIsDead");
+        }
 
         if (miniBoss.active == true)
         {
@@ -33,7 +37,7 @@ public class miniBossDoor : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "player" && miniBossAlive == false)
+        if (collision.gameObject.tag == "Player" && miniBossAlive == false)
         {
             if (ContinueOnLevel == false)
             {
