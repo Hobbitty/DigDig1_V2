@@ -24,6 +24,7 @@ public class PlayerAttack : MonoBehaviour
     private Rigidbody2D rbodyPlayer;
     private bool lookingUp;
     private bool lookingDown;
+    private Transform playerPos;
   
 
 
@@ -31,6 +32,7 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         rbodyPlayer = GetComponent<Rigidbody2D>();
+        playerPos = GetComponent<Transform>();
       
     }
 
@@ -62,7 +64,8 @@ public class PlayerAttack : MonoBehaviour
             {
                 Instantiate(attachHurtBoxDown, attackDirection);
                 attackTimer = attackTimerMaxValue;
-               
+
+                
             }
         }
     }
