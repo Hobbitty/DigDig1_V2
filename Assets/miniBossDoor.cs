@@ -22,7 +22,7 @@ public class miniBossDoor : MonoBehaviour
     {
        
 
-        if (miniBoss.active == true)
+        if (miniBoss.active == true)    
         {
             miniBossAlive = true;
         }
@@ -33,7 +33,10 @@ public class miniBossDoor : MonoBehaviour
     {
         if (collision.gameObject.tag == "player" && miniBossAlive == false)
         {
-            SceneManager.LoadScene(sceneToLoad);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                SceneManager.LoadScene(sceneToLoad);
+            }
         }
     }
 }
