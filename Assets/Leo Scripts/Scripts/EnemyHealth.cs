@@ -21,6 +21,7 @@ public class EnemyHealth : MonoBehaviour
 
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +71,12 @@ public class EnemyHealth : MonoBehaviour
             {
                 platformEnemyScript.active = true;
                 timer = 0;
+            }
+
+            if (collision.gameObject.name == "PlayerHurtBoxDown")
+            {
+                
+
             }
         }
 

@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpHeight;
     public float currentJumpTime;
     public float maxJumpTime;
-    private bool isJumping;
+    public bool isJumping;
     [Space]
 
     [Header("Movement")]

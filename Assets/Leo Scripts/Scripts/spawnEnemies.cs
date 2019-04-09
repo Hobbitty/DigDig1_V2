@@ -7,29 +7,29 @@ public class spawnEnemies : MonoBehaviour
 
     public GameObject enemy1;
     public GameObject enemy2;
-    public GameObject enemy3;
-    public GameObject enemy4;
+
 
     public Transform playerPos;
     public float spawnPos;
 
+    private int enemyCountToSpawn = 3;
+
     void Start()
     {
-        enemy1.active = false;
-        enemy2.active = false;
-        enemy3.active = false;
-        enemy4.active = false;
-
+        enemy1.SetActive(false);
+        enemy2.SetActive(false);
     }
 
     void Update()
     {
-      if(playerPos.position.x >= spawnPos)
+        if (playerPos.position.x >= spawnPos)
         {
-            enemy1.active = true;
-            enemy2.active = true;
-            enemy3.active = true;
-            enemy4.active = true;
-        } 
+            enemy1.SetActive(true);
+
+            for (int i = 0; i < enemyCountToSpawn; i++)
+            {
+                enemy2.SetActive(true);
+            }
+        }
     }
 }
