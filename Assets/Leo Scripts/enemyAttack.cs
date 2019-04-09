@@ -22,10 +22,11 @@ public class enemyAttack : MonoBehaviour
 
     void Start()
     {
+        rBody = GetComponent<Rigidbody2D>();
+
         currentPlayerHp = playerMaxHp;
         knockBackReset = 0;
         IsKnockbacked = false;
-
     }
 
     private void Update()

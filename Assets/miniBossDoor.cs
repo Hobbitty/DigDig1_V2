@@ -24,10 +24,10 @@ public class miniBossDoor : MonoBehaviour
 
         if(miniBossAlive == false)
         {
-            print("miniBossIsDead");
+           // print("miniBossIsDead");
         }
 
-        if (miniBoss.active == true)
+        if (miniBoss.activeSelf == true)
         {
             miniBossAlive = true;
         }
