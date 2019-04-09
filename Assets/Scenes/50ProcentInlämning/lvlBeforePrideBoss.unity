@@ -67320,9 +67320,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTank: {fileID: 1300193402}
   bounds: 1
-  minCamPos: {x: 0, y: -2, z: 0}
+  minCamPos: {x: 2.5, y: -2, z: 0}
   maxCamPos: {x: 140, y: 4, z: 0}
   CameraYMinPos: 0
+  minCamPos2: {x: 0, y: 0, z: 0}
+  maxCamPos2: {x: 0, y: 0, z: 0}
 --- !u!81 &1755626122
 AudioListener:
   m_ObjectHideFlags: 0
