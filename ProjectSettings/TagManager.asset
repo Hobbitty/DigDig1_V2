@@ -18,6 +18,7 @@ TagManager:
   - EnemyHurtBox
   - EnemySpawnTrigger
   - GroundCheck
+  - Water
   layers:
   - Default
   - TransparentFX
