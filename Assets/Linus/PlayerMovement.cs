@@ -31,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Animation")]
     public Animator playerAnimator;
     public float horizontalMovement;
+    public AudioSource jumpSound;
+    public AudioSource dashSound;
 
     private void Start()
     {
@@ -84,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.LeftShift) && canDash == true)
             {
+                dashSound.Play();
                 if (iG.isGrounded == true)
                 {
                     isDashing = true;
@@ -122,6 +125,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space) && iG.isGrounded == true)
             {
+                jumpSound.Play();
                 isJumping = true;
                 currentJumpTime = maxJumpTime;
                 rBody.velocity = new Vector2(rBody.velocity.x, jumpHeight);

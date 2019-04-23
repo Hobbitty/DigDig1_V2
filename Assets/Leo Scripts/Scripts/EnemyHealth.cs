@@ -18,6 +18,8 @@ public class EnemyHealth : MonoBehaviour
     private int timer = 0;
     private Transform enemyPos;
     public bool miniBossEnemy;
+    public AudioSource enemyDeathSound;
+    public float enemyDeathTimer;
 
 
 
@@ -48,7 +50,7 @@ public class EnemyHealth : MonoBehaviour
             }
 
 
-
+            enemyDeathSound.Play();
             DeathEffect();
         }
     }

@@ -154,6 +154,8 @@ MonoBehaviour:
   deathEffect: {fileID: 4327133232221799283, guid: bf5aca195a7cc294fa7b6ace160125a6,
     type: 3}
   miniBossEnemy: 0
+  enemyDeathSound: {fileID: 0}
+  enemyDeathTimer: 0
 --- !u!114 &2440210369634521708
 MonoBehaviour:
   m_ObjectHideFlags: 0

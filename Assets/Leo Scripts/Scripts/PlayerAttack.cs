@@ -24,9 +24,14 @@ public class PlayerAttack : MonoBehaviour
     private Rigidbody2D rbodyPlayer;
     private bool lookingUp;
     private bool lookingDown;
+    public int timer;
+    public bool enemyHit;
+    public AudioSource hit;
+    public AudioSource hitStick;
+
 
     private Transform playerPos;
-  
+
 
 
 
@@ -36,7 +41,7 @@ public class PlayerAttack : MonoBehaviour
         rbodyPlayer = GetComponent<Rigidbody2D>();
 
         playerPos = GetComponent<Transform>();
-      
+
 
     }
 
@@ -52,32 +57,37 @@ public class PlayerAttack : MonoBehaviour
 
     void Attacking()
     {
-       
-        
-            if (Input.GetKeyDown(KeyCode.C) && lookingUp == false && lookingDown == false && canAttack == true)
-            {
-                Instantiate(attackHurtBoxForward, attackDirection);
-                attackTimer = attackTimerMaxValue;
-            }
-            if (Input.GetKeyDown(KeyCode.C) && lookingUp == true && canAttack == true)
-            {
-                Instantiate(attackHurtBoxUp, attackDirection);
-                attackTimer = attackTimerMaxValue;
-            }
 
-            GameObject groundCheck = GameObject.Find("GroundCheck");
-            IsGrounded isAirborn = groundCheck.GetComponent<IsGrounded>();
-            if (Input.GetKeyDown(KeyCode.C) && lookingDown == true && lookingUp == false
-                && canAttack == true && isAirborn.isGrounded == false)
-            {
-                Instantiate(attachHurtBoxDown, attackDirection);
-                attackTimer = attackTimerMaxValue;
 
-            //  Inte klart ska fixa senare - Leo 
+        if (Input.GetKeyDown(KeyCode.C) && lookingUp == false && lookingDown == false && canAttack == true)
+        {
+            Instantiate(attackHurtBoxForward, attackDirection);
+            attackTimer = attackTimerMaxValue;
+            hitStick.Play();
+        }
+        if (Input.GetKeyDown(KeyCode.C) && lookingUp == true && canAttack == true)
+        {
+            Instantiate(attackHurtBoxUp, attackDirection);
+            attackTimer = attackTimerMaxValue;
+            hitStick.Play();
+        }
+
+        GameObject groundCheck = GameObject.Find("GroundCheck");
+        IsGrounded isAirborn = groundCheck.GetComponent<IsGrounded>();
+        if (Input.GetKeyDown(KeyCode.C) && lookingDown == true && lookingUp == false
+            && canAttack == true && isAirborn.isGrounded == false)
+        {
+            Instantiate(attachHurtBoxDown, attackDirection);
+            attackTimer = attackTimerMaxValue;
+
+            hitStick.Play();
+
+            
+
             //rbodyPlayer.velocity = transform.up * 10;
 
-            }
-        
+        }
+
     }
 
     void CanAttackUp()
@@ -137,8 +147,21 @@ public class PlayerAttack : MonoBehaviour
             if (canShoot == true)
             {
                 Instantiate(projectile, transform.position, transform.rotation);
-                rangedTimer = rangedTimerMaxValue;
+                rangedTimer = rangedTimerMaxValue; hit.Play();
             }
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "EnemyHurtBox")
+        {
+            enemyHit = true;
+           
+        }
+    }
+
+
+
 }
+
