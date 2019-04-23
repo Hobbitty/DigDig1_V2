@@ -7,25 +7,35 @@ public class enterDoor : MonoBehaviour
 {
     public string sceneToLoad;
 
-    void Start()
+    [Header("eButton")]
+    public GameObject eButton;
+
+    private void Start()
     {
-        
+        SetDisabled(false);
     }
 
-    
-    void Update()
+    private void SetDisabled(bool b)
     {
-        
+        eButton.SetActive(b);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if (collision.tag == "Player")
         {
+            SetDisabled(true);
+
             if (Input.GetKeyDown(KeyCode.E))
             {
                 SceneManager.LoadScene(sceneToLoad);
             }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+            SetDisabled(false);
     }
 }
