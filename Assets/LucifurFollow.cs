@@ -27,8 +27,13 @@ public class LucifurFollow : MonoBehaviour
     {
         FollowPlayer();
         ChangeDirection();
-        JumpingAfterPlayer();
         IfTooFar();
+
+        GameObject player = GameObject.FindWithTag("Player");
+        Transform playerTrans = player.transform;
+
+        if (transform.position.y < playerTrans.position.y - 2)
+            JumpingAfterPlayer();
     }
 
     void ChangeDirection()
@@ -68,13 +73,7 @@ public class LucifurFollow : MonoBehaviour
 
     void JumpingAfterPlayer()
     {
-        GameObject player = GameObject.FindWithTag("Player");
-        Transform playerTrans = player.transform;
-
-        if (transform.position.y < playerTrans.position.y - 1)
-        {
-            rbodyCat.velocity = new Vector2(rbodyCat.velocity.x, catJump);
-        }
+        rbodyCat.velocity = new Vector2(rbodyCat.velocity.x, catJump);
     }
 
     void IfTooFar()

@@ -76,7 +76,6 @@ public class EnemyHealth : MonoBehaviour
             if (collision.gameObject.name == "PlayerHurtBoxDown")
             {
                 
-
             }
         }
 
