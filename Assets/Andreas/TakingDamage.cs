@@ -23,6 +23,14 @@ public class TakingDamage : MonoBehaviour
     private SpriteRenderer playerRend;
     public bool debugInvincibility;
 
+    public float knockBackReset;
+    public Transform playerPosition;
+    public Rigidbody2D rBody;
+    public Vector2 knockbackDirection;
+    public static bool IsKnockbacked;
+    public Transform enemyPosition;
+    public float knockbackValue;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -86,6 +94,20 @@ public class TakingDamage : MonoBehaviour
             Vector3 camTank = camera.transform.position;
             Instantiate(damageFlash, new Vector3(camTank.x, camTank.y, 0), transform.rotation);
         }
+
+        transform.position = enemyPosition.position;
+        knockbackDirection = playerPosition.transform.position - enemyPosition.transform.position;
+        if (IsKnockbacked == true)
+        {
+            knockBackReset = knockBackReset + 1f * Time.deltaTime;
+        }
+        if (knockBackReset >= 1)
+        {
+            knockBackReset = 0;
+            IsKnockbacked = false;
+        }
+
+
     }
 
     void Dead()

@@ -25,12 +25,18 @@ public class PlayerAttack : MonoBehaviour
     private bool lookingUp;
     private bool lookingDown;
 
+    private Transform playerPos;
+  
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         rbodyPlayer = GetComponent<Rigidbody2D>();
+
+        playerPos = GetComponent<Transform>();
+      
 
     }
 
@@ -46,8 +52,8 @@ public class PlayerAttack : MonoBehaviour
 
     void Attacking()
     {
-        if (PlayerKnockback.IsKnockbacked || enemyAttack.IsKnockbacked == false)
-        {
+       
+        
             if (Input.GetKeyDown(KeyCode.C) && lookingUp == false && lookingDown == false && canAttack == true)
             {
                 Instantiate(attackHurtBoxForward, attackDirection);
@@ -66,8 +72,12 @@ public class PlayerAttack : MonoBehaviour
             {
                 Instantiate(attachHurtBoxDown, attackDirection);
                 attackTimer = attackTimerMaxValue;
+
+            //  Inte klart ska fixa senare - Leo 
+            //rbodyPlayer.velocity = transform.up * 10;
+
             }
-        }
+        
     }
 
     void CanAttackUp()
