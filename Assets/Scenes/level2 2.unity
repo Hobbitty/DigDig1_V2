@@ -124,6 +124,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Billy
       objectReference: {fileID: 0}
+    - target: {fileID: 3532695654165062629, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2856256911741559198, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -178,11 +183,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3532695654165062629, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
@@ -258,16 +258,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 689408194}
-    - target: {fileID: 7024926596756973601, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
-        type: 3}
-      propertyPath: rBody
-      value: 
-      objectReference: {fileID: 1952077791}
-    - target: {fileID: 7024926596756973601, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
-        type: 3}
-      propertyPath: mobAlive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7024926596756973606, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
         type: 3}
       propertyPath: playerSprite
@@ -283,6 +273,16 @@ PrefabInstance:
       propertyPath: rBody
       value: 
       objectReference: {fileID: 689408192}
+    - target: {fileID: 7024926596756973601, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
+        type: 3}
+      propertyPath: rBody
+      value: 
+      objectReference: {fileID: 1952077791}
+    - target: {fileID: 7024926596756973601, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
+        type: 3}
+      propertyPath: mobAlive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f, type: 3}
 --- !u!1 &103005788
@@ -1192,16 +1192,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 689408194}
-    - target: {fileID: 7024926596756973601, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
-        type: 3}
-      propertyPath: rBody
-      value: 
-      objectReference: {fileID: 2071624670}
-    - target: {fileID: 7024926596756973601, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
-        type: 3}
-      propertyPath: mobAlive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7024926596756973606, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
         type: 3}
       propertyPath: playerSprite
@@ -1217,6 +1207,16 @@ PrefabInstance:
       propertyPath: rBody
       value: 
       objectReference: {fileID: 689408192}
+    - target: {fileID: 7024926596756973601, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
+        type: 3}
+      propertyPath: rBody
+      value: 
+      objectReference: {fileID: 2071624670}
+    - target: {fileID: 7024926596756973601, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
+        type: 3}
+      propertyPath: mobAlive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f, type: 3}
 --- !u!1 &1215511745
@@ -1272,7 +1272,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: a27f5a889b1c2524d938dcfc553c9561, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1391,7 +1391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesAreStuck: 0
-  player: {fileID: 0}
+  player: {fileID: 689408184}
 --- !u!1 &1703846900
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,6 +1547,8 @@ MonoBehaviour:
   deathEffect: {fileID: 4327133232221799283, guid: bf5aca195a7cc294fa7b6ace160125a6,
     type: 3}
   miniBossEnemy: 0
+  enemyDeathSound: {fileID: 0}
+  enemyDeathTimer: 0
 --- !u!50 &1952077791 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 7024926596756973661, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
@@ -1583,3 +1585,5 @@ MonoBehaviour:
   deathEffect: {fileID: 4327133232221799283, guid: bf5aca195a7cc294fa7b6ace160125a6,
     type: 3}
   miniBossEnemy: 0
+  enemyDeathSound: {fileID: 0}
+  enemyDeathTimer: 0
