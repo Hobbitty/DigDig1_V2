@@ -19,6 +19,7 @@ public class lvl1Transition : MonoBehaviour
     public static bool doShake;
     public float timer3;
     public string sceneToLoad = "level1";
+    public Animator playerAnimator;
 
 
     void Start()
@@ -47,6 +48,7 @@ public class lvl1Transition : MonoBehaviour
 
         if (playerPosition.position.x >= 0)
         {
+            playerAnimator.SetBool("frozen", true);
             frozen = true;
             rBody.constraints = RigidbodyConstraints2D.FreezePositionX;
             timer2 = timer2 + 1 * Time.deltaTime;
