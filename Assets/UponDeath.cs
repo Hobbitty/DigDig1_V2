@@ -5,17 +5,15 @@ using UnityEngine;
 
 public class UponDeath : MonoBehaviour
 {
-    public string LevelPlayerDiedOn;
+    public int LevelPlayerDiedOnIndex = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-        LevelPlayerDiedOn = SceneManager.GetActiveScene().name;
+        GameObject player = GameObject.FindWithTag("Player");
+        TakingDamage getScene = player.GetComponent<TakingDamage>();
+        
+        LevelPlayerDiedOnIndex = getScene.lvlPlayerDiedOn;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

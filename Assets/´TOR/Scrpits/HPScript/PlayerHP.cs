@@ -55,9 +55,7 @@ public class PlayerHP : MonoBehaviour
     {
         if (hP <= 0)
         {
-            SceneManager.LoadScene(deathScene);
-
-            Debug.Log("Dead");
+    
         }
     }
 }

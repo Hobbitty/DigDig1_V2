@@ -12,6 +12,7 @@ public class TakingDamage : MonoBehaviour
     public GameObject damageFlash;
     [Header("Death")]
     public string deathScene;
+    public int lvlPlayerDiedOn = 1;
     [Header("MercyInvincibility")]
     public float mercyTimer;
     public float mercyFrequency;
@@ -41,6 +42,8 @@ public class TakingDamage : MonoBehaviour
 
         playerRend = GetComponent<SpriteRenderer>();
         mainColor = GetComponent<SpriteRenderer>().color;
+
+        lvlPlayerDiedOn += 1;
 
     }
 
@@ -95,7 +98,6 @@ public class TakingDamage : MonoBehaviour
             Instantiate(damageFlash, new Vector3(camTank.x, camTank.y, 0), transform.rotation);
         }
 
-        transform.position = enemyPosition.position;
         knockbackDirection = playerPosition.transform.position - enemyPosition.transform.position;
         if (IsKnockbacked == true)
         {
@@ -115,6 +117,7 @@ public class TakingDamage : MonoBehaviour
         if (currentHP <= 0)
         {
             SceneManager.LoadScene(deathScene);
+
         }
     }
 
