@@ -31,8 +31,6 @@ public class enemyAttack : MonoBehaviour
 
     private void Update()
     {
-        HP();
-
         transform.position = enemyPosition.position;
         knockbackDirection = playerPosition.transform.position - enemyPosition.transform.position;
         if (IsKnockbacked == true)
@@ -94,10 +92,5 @@ public class enemyAttack : MonoBehaviour
             LeoPlayerMovement.playerIsAlive = true;
         }
 
-    }
-
-    void HP()
-    {
-        //currentPlayerHp = playerHP.hP;
     }
 }
