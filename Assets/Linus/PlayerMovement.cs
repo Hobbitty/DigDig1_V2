@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         lvl1Transition.frozen = false;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
 
         if (PlayerKnockback.IsKnockbacked == false && lvl1Transition.frozen == false)
