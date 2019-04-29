@@ -24,14 +24,14 @@ public class PlayerAttack : MonoBehaviour
     private Rigidbody2D rbodyPlayer;
     private bool lookingUp;
     private bool lookingDown;
-  
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         rbodyPlayer = GetComponent<Rigidbody2D>();
-      
+
     }
 
     // Update is called once per frame
@@ -58,11 +58,14 @@ public class PlayerAttack : MonoBehaviour
                 Instantiate(attackHurtBoxUp, attackDirection);
                 attackTimer = attackTimerMaxValue;
             }
-            if (Input.GetKeyDown(KeyCode.C) && lookingDown == true && lookingUp == false && canAttack == true)
+
+            GameObject groundCheck = GameObject.Find("GroundCheck");
+            IsGrounded isAirborn = groundCheck.GetComponent<IsGrounded>();
+            if (Input.GetKeyDown(KeyCode.C) && lookingDown == true && lookingUp == false
+                && canAttack == true && isAirborn.isGrounded == false)
             {
                 Instantiate(attachHurtBoxDown, attackDirection);
                 attackTimer = attackTimerMaxValue;
-               
             }
         }
     }
