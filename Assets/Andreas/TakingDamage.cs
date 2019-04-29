@@ -31,6 +31,8 @@ public class TakingDamage : MonoBehaviour
     public static bool IsKnockbacked;
     public Transform enemyPosition;
     public float knockbackValue;
+    public float timer;
+    public static bool dead;
 
     // Start is called before the first frame update
     void Start()
@@ -116,7 +118,14 @@ public class TakingDamage : MonoBehaviour
     {
         if (currentHP <= 0)
         {
-            SceneManager.LoadScene(deathScene);
+            rBody.constraints = RigidbodyConstraints2D.None;
+            timer = timer + 1 * Time.deltaTime;
+            dead = true;
+            if (timer >= 3)
+            {
+                SceneManager.LoadScene(deathScene);
+            }
+
 
         }
     }

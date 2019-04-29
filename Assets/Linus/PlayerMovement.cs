@@ -44,10 +44,10 @@ public class PlayerMovement : MonoBehaviour
         lvl1Transition.frozen = false;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
 
-        if (PlayerKnockback.IsKnockbacked == false && lvl1Transition.frozen == false)
+        if (PlayerKnockback.IsKnockbacked == false && lvl1Transition.frozen == false && TakingDamage.dead == false)
         {
             Jump();
             if (isDashing == false)
