@@ -33,6 +33,7 @@ public class TakingDamage : MonoBehaviour
     public float knockbackValue;
     public float timer;
     public static bool dead;
+    public AudioSource deathSound;
 
     // Start is called before the first frame update
     void Start()
@@ -121,6 +122,7 @@ public class TakingDamage : MonoBehaviour
             rBody.constraints = RigidbodyConstraints2D.None;
             timer = timer + 1 * Time.deltaTime;
             dead = true;
+            deathSound.Play();
             if (timer >= 3)
             {
                 SceneManager.LoadScene(deathScene);

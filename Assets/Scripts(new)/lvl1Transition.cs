@@ -65,6 +65,7 @@ public class lvl1Transition : MonoBehaviour
             if (timer3 >= 2f)
             {
                 doShake = true;
+                enemyLanding.playSound = true;
             }
 
             if(timer3 >= 3)
