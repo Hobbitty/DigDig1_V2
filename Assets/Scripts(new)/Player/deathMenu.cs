@@ -1,19 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class deathMenu : MonoBehaviour
 {
-
-    public void Continue()
-    {
-        Debug.Log("Continue Game...");
-    }
+    public string sceneToLoad;
 
     public void quitGame()
     {
         Application.Quit();
         Debug.Log("Quit Game...");
+    }
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(sceneToLoad);
     }
 
 
