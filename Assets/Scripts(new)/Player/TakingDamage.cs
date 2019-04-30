@@ -116,6 +116,7 @@ public class TakingDamage : MonoBehaviour
 
         if(collision.gameObject.tag == "Killplane")
         {
+            print("hit killplane");
             transform.position = new Vector3(0, 0);
         }
     }
