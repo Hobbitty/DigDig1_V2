@@ -167,3 +167,5 @@ MonoBehaviour:
   playerPosition: {fileID: 0}
   rBody: {fileID: 0}
   knockbackDirection: {x: 0, y: 0}
+  knockbackAmout: 0
+  playerHP: {fileID: 0}
