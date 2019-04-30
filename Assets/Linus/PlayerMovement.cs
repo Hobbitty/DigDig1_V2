@@ -31,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Animation")]
     public Animator playerAnimator;
     public float horizontalMovement;
+    public AudioSource jumpSound;
+    public AudioSource dashSound;
 
     private void Start()
     {
@@ -42,9 +44,10 @@ public class PlayerMovement : MonoBehaviour
         lvl1Transition.frozen = false;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (PlayerKnockback.IsKnockbacked == false && lvl1Transition.frozen == false)
+
+        if (PlayerKnockback.IsKnockbacked == false && lvl1Transition.frozen == false && TakingDamage.dead == false)
         {
             Jump();
             if (isDashing == false)
@@ -69,7 +72,11 @@ public class PlayerMovement : MonoBehaviour
             }
 
             horizontalMovement = Input.GetAxis("Horizontal");
-            playerAnimator.SetFloat("Horizontal", (Mathf.Abs(horizontalMovement)));
+            if (TakingDamage.dead == false)
+            {
+                playerAnimator.SetFloat("Horizontal", (Mathf.Abs(horizontalMovement)));
+            }
+
 
             if (dashCounter == 1)
                 canDash = false;
@@ -81,6 +88,7 @@ public class PlayerMovement : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.LeftShift) && canDash == true)
             {
+                dashSound.Play();
                 if (iG.isGrounded == true)
                 {
                     isDashing = true;
@@ -98,6 +106,9 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
+
+
+
     }
 
     void IsNotDashing()
@@ -107,14 +118,16 @@ public class PlayerMovement : MonoBehaviour
             isDashing = false;
             rBody.gravityScale = gravity;
         }
-    }
 
+    }
     void Jump()
     {
+
         if (PlayerKnockback.IsKnockbacked == false && lvl1Transition.frozen == false)
         {
             if (Input.GetKeyDown(KeyCode.Space) && iG.isGrounded == true)
             {
+                jumpSound.Play();
                 isJumping = true;
                 currentJumpTime = maxJumpTime;
                 rBody.velocity = new Vector2(rBody.velocity.x, jumpHeight);
@@ -133,6 +146,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 isJumping = false;
             }
+
+
+
         }
     }
 }
+
+

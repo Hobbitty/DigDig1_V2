@@ -24,7 +24,6 @@ public class TakingDamage : MonoBehaviour
     private SpriteRenderer playerRend;
     public bool debugInvincibility;
 
-    [Header("Knockback/Position")]
     public float knockBackReset;
     public Transform playerPosition;
     public Rigidbody2D rBody;
@@ -32,7 +31,12 @@ public class TakingDamage : MonoBehaviour
     public static bool IsKnockbacked;
     public Transform enemyPosition;
     public float knockbackValue;
-    
+    public float timer;
+    public static bool dead;
+    public AudioSource deathSound;
+    public Animator playerAnimator;
+
+    private Vector2 spawnPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -47,8 +51,7 @@ public class TakingDamage : MonoBehaviour
 
         lvlPlayerDiedOn += 1;
 
-        TakingDamage closestEnemyTank = GetComponent<TakingDamage>();
-        
+        spawnPoint = transform.position;
     }
 
     // Update is called once per frame
@@ -58,7 +61,7 @@ public class TakingDamage : MonoBehaviour
         Dead();
 
         DebugInvincibility();
-        FindClosestEnemy();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -103,7 +106,7 @@ public class TakingDamage : MonoBehaviour
             Instantiate(damageFlash, new Vector3(camTank.x, camTank.y, 0), transform.rotation);
         }
 
-        knockbackDirection = playerPosition.transform.position - enemyPosition.transform.position;
+        //knockbackDirection = playerPosition.transform.position - enemyPosition.transform.position;
         if (IsKnockbacked == true)
         {
             knockBackReset = knockBackReset + 1f * Time.deltaTime;
@@ -114,41 +117,26 @@ public class TakingDamage : MonoBehaviour
             IsKnockbacked = false;
         }
 
-        if(collision.gameObject.tag == "Killplane")
-        {
-            print("hit killplane");
-            transform.position = new Vector3(0, 0);
-        }
-    }
+        if (collision.gameObject.tag == "Killplane")
+            transform.position = spawnPoint;
 
-    public void FindClosestEnemy()
-    {
-        GameObject findClosestEnemy()
-        {
-            GameObject[] gos;
-            gos = GameObject.FindGameObjectsWithTag("Enemy");
-            GameObject closest = null;
-            float distance = Mathf.Infinity;
-            Vector3 position = transform.position;
-            foreach (GameObject go in gos)
-            {
-                Vector3 diff = go.transform.position - position;
-                float curDistance = diff.sqrMagnitude;
-                if (curDistance < distance)
-                {
-                    closest = go;
-                    distance = curDistance;
-                }
-            }
-            return closest;
-        }
     }
 
     void Dead()
     {
         if (currentHP <= 0)
         {
-            SceneManager.LoadScene(deathScene);
+            rBody.constraints = RigidbodyConstraints2D.None;
+            timer = timer + 1 * Time.deltaTime;
+            dead = true;
+            playerAnimator.SetBool("frozen", true);
+            deathSound.Play();
+            if (timer >= 3)
+            {
+                SceneManager.LoadScene(deathScene);
+            }
+
+
         }
     }
 
@@ -176,6 +164,6 @@ public class TakingDamage : MonoBehaviour
             debugInvincibility = !debugInvincibility;
             canBeDamaged = !debugInvincibility;
         }
-    }
 
+    }
 }
