@@ -9,7 +9,6 @@ public class pauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     private int currentSceneIndex;
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -43,7 +42,7 @@ public class pauseMenu : MonoBehaviour
     {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         PlayerPrefs.SetInt("SavedScene", currentSceneIndex);
-        //SceneManager.LoadScene("StartMenu");
+        SceneManager.LoadScene("StartMenu");
         Debug.Log("Loading Menu...");
     }
 
