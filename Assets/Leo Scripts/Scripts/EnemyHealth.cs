@@ -20,6 +20,7 @@ public class EnemyHealth : MonoBehaviour
     public bool miniBossEnemy;
     public AudioSource enemyDeathSound;
     public float enemyDeathTimer;
+    public AudioSource enemyHurtsound;
 
 
 
@@ -49,7 +50,7 @@ public class EnemyHealth : MonoBehaviour
                 miniBossDoor.miniBossAlive = false;
             }
 
-
+            
             enemyDeathSound.Play();
             DeathEffect();
         }
@@ -61,6 +62,7 @@ public class EnemyHealth : MonoBehaviour
         {
             AttackPhysics wep = collision.gameObject.GetComponent<AttackPhysics>();
             healthPoints -= wep.damage;
+            enemyHurtsound.Play();
 
             StartCoroutine(Flash());
 
@@ -88,6 +90,7 @@ public class EnemyHealth : MonoBehaviour
     void DeathEffect()
     {
         Instantiate(deathEffect, transform.position, transform.rotation);
+        Instantiate(enemyDeathSound, transform.position.normalized, transform.rotation);
     }
 
 }

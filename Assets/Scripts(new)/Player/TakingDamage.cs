@@ -34,6 +34,7 @@ public class TakingDamage : MonoBehaviour
     public float timer;
     public static bool dead;
     public AudioSource deathSound;
+    public Animator playerAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +58,7 @@ public class TakingDamage : MonoBehaviour
         Dead();
 
         DebugInvincibility();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -101,7 +103,7 @@ public class TakingDamage : MonoBehaviour
             Instantiate(damageFlash, new Vector3(camTank.x, camTank.y, 0), transform.rotation);
         }
 
-        knockbackDirection = playerPosition.transform.position - enemyPosition.transform.position;
+        //knockbackDirection = playerPosition.transform.position - enemyPosition.transform.position;
         if (IsKnockbacked == true)
         {
             knockBackReset = knockBackReset + 1f * Time.deltaTime;
@@ -122,6 +124,7 @@ public class TakingDamage : MonoBehaviour
             rBody.constraints = RigidbodyConstraints2D.None;
             timer = timer + 1 * Time.deltaTime;
             dead = true;
+            playerAnimator.SetBool("frozen", true);
             deathSound.Play();
             if (timer >= 3)
             {

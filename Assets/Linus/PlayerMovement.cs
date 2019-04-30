@@ -72,8 +72,10 @@ public class PlayerMovement : MonoBehaviour
             }
 
             horizontalMovement = Input.GetAxis("Horizontal");
-            playerAnimator.SetFloat("Horizontal", (Mathf.Abs(horizontalMovement)));
-
+            if (TakingDamage.dead == false)
+            {
+                playerAnimator.SetFloat("Horizontal", (Mathf.Abs(horizontalMovement)));
+            }
 
 
             if (dashCounter == 1)

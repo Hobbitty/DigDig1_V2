@@ -45,7 +45,7 @@ public class Shake : MonoBehaviour
             Vector2 pos = transform.localPosition;
             pos.x = startingPos.x + (Mathf.Sin(Time.time * shakeSpeed) * shakeAmount);
             pos.y = startingPos.y + (Mathf.Sin(Time.time * shakeSpeed) * shakeAmount);
-            transform.localPosition = pos;
+            //transform.localPosition = pos;
         }
     }
 }
