@@ -24,6 +24,7 @@ public class TakingDamage : MonoBehaviour
     private SpriteRenderer playerRend;
     public bool debugInvincibility;
 
+    [Header("Knockback/Position")]
     public float knockBackReset;
     public Transform playerPosition;
     public Rigidbody2D rBody;
@@ -31,6 +32,7 @@ public class TakingDamage : MonoBehaviour
     public static bool IsKnockbacked;
     public Transform enemyPosition;
     public float knockbackValue;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +47,8 @@ public class TakingDamage : MonoBehaviour
 
         lvlPlayerDiedOn += 1;
 
+        TakingDamage closestEnemyTank = GetComponent<TakingDamage>();
+        
     }
 
     // Update is called once per frame
@@ -54,6 +58,7 @@ public class TakingDamage : MonoBehaviour
         Dead();
 
         DebugInvincibility();
+        FindClosestEnemy();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -109,7 +114,33 @@ public class TakingDamage : MonoBehaviour
             IsKnockbacked = false;
         }
 
+        if(collision.gameObject.tag == "Killplane")
+        {
+            transform.position = new Vector3(0, 0);
+        }
+    }
 
+    public void FindClosestEnemy()
+    {
+        GameObject findClosestEnemy()
+        {
+            GameObject[] gos;
+            gos = GameObject.FindGameObjectsWithTag("Enemy");
+            GameObject closest = null;
+            float distance = Mathf.Infinity;
+            Vector3 position = transform.position;
+            foreach (GameObject go in gos)
+            {
+                Vector3 diff = go.transform.position - position;
+                float curDistance = diff.sqrMagnitude;
+                if (curDistance < distance)
+                {
+                    closest = go;
+                    distance = curDistance;
+                }
+            }
+            return closest;
+        }
     }
 
     void Dead()
@@ -117,7 +148,6 @@ public class TakingDamage : MonoBehaviour
         if (currentHP <= 0)
         {
             SceneManager.LoadScene(deathScene);
-
         }
     }
 
@@ -145,6 +175,6 @@ public class TakingDamage : MonoBehaviour
             debugInvincibility = !debugInvincibility;
             canBeDamaged = !debugInvincibility;
         }
-
     }
+
 }

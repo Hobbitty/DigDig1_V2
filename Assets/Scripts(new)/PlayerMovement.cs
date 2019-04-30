@@ -44,7 +44,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-
         if (PlayerKnockback.IsKnockbacked == false && lvl1Transition.frozen == false)
         {
             Jump();
@@ -71,8 +70,6 @@ public class PlayerMovement : MonoBehaviour
 
             horizontalMovement = Input.GetAxis("Horizontal");
             playerAnimator.SetFloat("Horizontal", (Mathf.Abs(horizontalMovement)));
-
-
 
             if (dashCounter == 1)
                 canDash = false;
@@ -101,9 +98,6 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
-
-
-
     }
 
     void IsNotDashing()
@@ -113,11 +107,10 @@ public class PlayerMovement : MonoBehaviour
             isDashing = false;
             rBody.gravityScale = gravity;
         }
-
     }
+
     void Jump()
     {
-
         if (PlayerKnockback.IsKnockbacked == false && lvl1Transition.frozen == false)
         {
             if (Input.GetKeyDown(KeyCode.Space) && iG.isGrounded == true)
@@ -140,9 +133,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 isJumping = false;
             }
-
-
-
         }
     }
 }

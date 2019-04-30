@@ -19,6 +19,12 @@ public class CameraFollow : MonoBehaviour
     public Vector3 maxCamPos2;
 
 
+    private void Start()
+    {
+        FindPlayer();
+        
+    }
+
     private void FixedUpdate()
     {
         CameraYPos.y = playerTank.position.y + CameraYMinPos;
@@ -41,5 +47,13 @@ public class CameraFollow : MonoBehaviour
             }
 
         }
+    }
+
+    void FindPlayer()
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+        Transform playerTrans = player.transform;
+
+        playerTank = playerTrans;
     }
 }
