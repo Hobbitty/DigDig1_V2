@@ -184,6 +184,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 509304595, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 689408188}
+    - target: {fileID: 2800768319562061417, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
+        type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 689408187}
+    - target: {fileID: 2800768319562061417, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
+        type: 3}
+      propertyPath: dashSound
+      value: 
+      objectReference: {fileID: 689408186}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
 --- !u!1001 &75299304
@@ -819,6 +833,24 @@ PrefabInstance:
 --- !u!1 &689408184 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7285945204729540855, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
+    type: 3}
+  m_PrefabInstance: {fileID: 14427348}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &689408186 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1230057615, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
+    type: 3}
+  m_PrefabInstance: {fileID: 14427348}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &689408187 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1230057614, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
+    type: 3}
+  m_PrefabInstance: {fileID: 14427348}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &689408188 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 758427759, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
     type: 3}
   m_PrefabInstance: {fileID: 14427348}
   m_PrefabAsset: {fileID: 0}
