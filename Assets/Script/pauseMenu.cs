@@ -41,9 +41,12 @@ public class pauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
+
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         PlayerPrefs.SetInt("SavedScene", currentSceneIndex);
         //SceneManager.LoadScene("StartMenu");
+
+        SceneManager.LoadScene("StartMenu");
         Debug.Log("Loading Menu...");
     }
 

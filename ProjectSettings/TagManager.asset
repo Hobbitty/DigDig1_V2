@@ -3,7 +3,22 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Heart
+  - Heart
+  - PlayerHurtBox
+  - Boss
+  - Wall
+  - Enemy
+  - Ground
+  - Parent
+  - player
+  - invisiblewall
+  - DamageFlash
+  - EnemyHurtBox
+  - EnemySpawnTrigger
+  - GroundCheck
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -13,8 +28,8 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - 
+  - Lucifur
+  - Ground
   - 
   - 
   - 
