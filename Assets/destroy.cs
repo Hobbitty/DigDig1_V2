@@ -6,6 +6,7 @@ public class destroy : MonoBehaviour
 {
     public int timer;
     public static bool playerPickedUpAmmo;
+    public AudioSource reload;
 
     void Update()
     {
@@ -21,7 +22,7 @@ public class destroy : MonoBehaviour
         {
             timer = timer + 1;
             playerPickedUpAmmo = true;
-           
+            reload.Play();
         }
     }
 }
