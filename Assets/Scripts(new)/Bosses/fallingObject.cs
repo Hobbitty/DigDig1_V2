@@ -14,6 +14,7 @@ public class fallingObject : MonoBehaviour
     private Vector2 startingPos;
     Vector2 P;
     public float magnitude;
+    public AudioSource splash;
 
     private void Awake()
     {
@@ -47,6 +48,11 @@ public class fallingObject : MonoBehaviour
         {
             print("Touched");
             Touched = true;
+        }
+
+        if(collision.gameObject.tag == "Ground")
+        {
+            splash.Play();
         }
     }
 
