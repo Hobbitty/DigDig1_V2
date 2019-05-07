@@ -90,7 +90,7 @@ public class EnemyHealth : MonoBehaviour
     void DeathEffect()
     {
         Instantiate(deathEffect, transform.position, transform.rotation);
-        Instantiate(enemyDeathSound, transform.position.normalized, transform.rotation);
+        /*Instantiate(enemyDeathSound, transform.position.normalized, transform.rotation);*/
     }
 
 }
