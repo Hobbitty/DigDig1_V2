@@ -198,6 +198,12 @@ PrefabInstance:
       propertyPath: dashSound
       value: 
       objectReference: {fileID: 689408186}
+    - target: {fileID: 8483685397304587774, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
+        type: 3}
+      propertyPath: dustCloud
+      value: 
+      objectReference: {fileID: 7347279827899622423, guid: f84c127f38e0f5c4cb469da8e8630288,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
 --- !u!1001 &75299304
