@@ -67312,6 +67312,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenuLeo
       objectReference: {fileID: 0}
+    - target: {fileID: 142496512, guid: edc0629ca476f704794b3fe09dc20717, type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 142496512, guid: edc0629ca476f704794b3fe09dc20717, type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4604549182278857415, guid: edc0629ca476f704794b3fe09dc20717,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67366,14 +67374,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 142496512, guid: edc0629ca476f704794b3fe09dc20717, type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 142496512, guid: edc0629ca476f704794b3fe09dc20717, type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edc0629ca476f704794b3fe09dc20717, type: 3}
@@ -67488,8 +67488,8 @@ MonoBehaviour:
   minCamPos: {x: 2.5, y: -2, z: 0}
   maxCamPos: {x: 140, y: 4, z: 0}
   CameraYMinPos: 2.8
-  minCamPos2: {x: 0, y: 0, z: 0}
-  maxCamPos2: {x: 0, y: 0, z: 0}
+  minCamPos2: {x: 2.5, y: -2, z: 0}
+  maxCamPos2: {x: 140, y: 4, z: 0}
 --- !u!81 &1755626122
 AudioListener:
   m_ObjectHideFlags: 0
@@ -67621,6 +67621,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2960003509622660358, guid: 8a928cf586afc1c49be45bf6b0db5db1,
+        type: 3}
+      propertyPath: healthPoints
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3349173677845594541, guid: 8a928cf586afc1c49be45bf6b0db5db1,
         type: 3}
       propertyPath: moveSpeed
@@ -67699,6 +67704,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3769094589565399295, guid: 8ed6d96275b2be74b804e0116b9c6324,
+        type: 3}
+      propertyPath: sceneName
+      value: boss 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ed6d96275b2be74b804e0116b9c6324, type: 3}
