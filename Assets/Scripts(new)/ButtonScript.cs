@@ -8,6 +8,7 @@ public class ButtonScript : MonoBehaviour
     public Vector3 pressSize;
     [Header("Keep Clear")]
     public SpriteRenderer rend;
+
     private CheckpointUnlock cU;
 
     private void Start()

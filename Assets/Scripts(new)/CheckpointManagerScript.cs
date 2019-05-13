@@ -16,6 +16,10 @@ public class CheckpointManagerScript : MonoBehaviour
         }
         else
             Destroy(gameObject);
-
+    }
+    private void Start()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.transform.position = lastCheckPos;
     }
 }
