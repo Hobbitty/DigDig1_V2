@@ -3,9 +3,36 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: [Heart, Heart, PlayerHurtBox, Boss, Wall, Enemy, Ground, Parent, player, invisiblewall,
-    DamageFlash, EnemyHurtBox, EnemySpawnTrigger, Heart, Heart, PlayerHurtBox, Boss,
-    Wall, Enemy, Ground, Parent, player, invisiblewall, DamageFlash, EnemyHurtBox]
+  tags:
+  - Heart
+  - Heart
+  - PlayerHurtBox
+  - Boss
+  - Wall
+  - Enemy
+  - Ground
+  - Parent
+  - player
+  - invisiblewall
+  - DamageFlash
+  - EnemyHurtBox
+  - EnemySpawnTrigger
+  - Heart
+  - Heart
+  - PlayerHurtBox
+  - Boss
+  - Wall
+  - Enemy
+  - Ground
+  - Parent
+  - player
+  - invisiblewall
+  - DamageFlash
+  - EnemyHurtBox
+  - Water
+  - MiniGameSpawnRooms
+  - MiniGameSpawnRoomPoints
+  - Rooms
   layers:
   - Default
   - TransparentFX
@@ -17,7 +44,6 @@ TagManager:
   - 
   - Lucifur
   - Ground
-  - 
   - 
   - 
   - 
