@@ -29,7 +29,7 @@ TagManager:
   - invisiblewall
   - DamageFlash
   - EnemyHurtBox
-  - Killplane
+  - AmmoPack
   - CheckpointManager
   - KeyPress
   layers:

@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 8711232691754670739}
   - component: {fileID: 1303594772806144337}
   - component: {fileID: 6344790659332848365}
-  - component: {fileID: 2853967712490350904}
   - component: {fileID: 3875285675272948323}
   - component: {fileID: 2440210369634521708}
   - component: {fileID: 3718901499928456915}
   - component: {fileID: 1952075795743203338}
+  - component: {fileID: 1468949022131131481}
   m_Layer: 15
   m_Name: FlyingEnemy1
   m_TagString: Enemy
@@ -106,37 +106,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!60 &2853967712490350904
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7078104226685816061}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.72, y: 2.48}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.3250742, y: -0.057700634}
-      - {x: 0.12111139, y: 0.8484311}
-      - {x: -0.5818464, y: 0.7345515}
-      - {x: -0.5844016, y: -0.38634276}
-      - {x: -0.37473345, y: -1.0878975}
-      - {x: 0.64495754, y: -1.1589515}
 --- !u!114 &3875285675272948323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +124,7 @@ MonoBehaviour:
   deathEffect: {fileID: 4327133232221799283, guid: bf5aca195a7cc294fa7b6ace160125a6,
     type: 3}
   miniBossEnemy: 0
-  enemyDeathSound: {fileID: 0}
+  enemyDeathSound: {fileID: 1952075795743203338}
   enemyDeathTimer: 0
   enemyHurtsound: {fileID: 1952075795743203338}
 --- !u!114 &2440210369634521708
@@ -286,3 +255,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!58 &1468949022131131481
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7078104226685816061}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.1

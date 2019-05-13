@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -20,6 +21,11 @@ public class PlayerAttack : MonoBehaviour
     public float rangedTimer;
     public float rangedTimerMaxValue;
     public bool canShoot;
+
+    [Header("Ammo")]
+    public int maxAmmo = 30;
+    public int currentAmmo;
+    public TextMeshProUGUI displayAmmo;
 
     private Rigidbody2D rbodyPlayer;
     private bool lookingUp;
@@ -42,7 +48,7 @@ public class PlayerAttack : MonoBehaviour
 
         playerPos = GetComponent<Transform>();
 
-
+        currentAmmo = maxAmmo;
     }
 
     // Update is called once per frame
@@ -144,13 +150,31 @@ public class PlayerAttack : MonoBehaviour
 
         if (Input.GetKey(KeyCode.X))
         {
-            if (canShoot == true)
+            if (canShoot == true & currentAmmo > 0)
             {
                 Instantiate(projectile, transform.position, transform.rotation);
                 rangedTimer = rangedTimerMaxValue; hit.Play();
+                currentAmmo = currentAmmo - 1;
             }
         }
+
+        displayAmmo.text = string.Format("AMMO: {0}", currentAmmo);
+
+        if(currentAmmo > maxAmmo)
+        {
+            currentAmmo = maxAmmo;
+        }
+
+        if(destroy.playerPickedUpAmmo == true)
+        {
+            currentAmmo = currentAmmo + 10;
+            destroy.playerPickedUpAmmo = false;
+        }
+
     }
+
+
+   
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -17,12 +17,12 @@ public class enterDoor : MonoBehaviour
 
     private void Start()
     {
-        SetDisabled(false);
+        //SetDisabled(false);
     }
 
     private void SetDisabled(bool b)
     {
-        eButton.SetActive(b);
+        //eButton.SetActive(b);
     }
 
     private void Update()

@@ -32,7 +32,7 @@ public class LucifurFollow : MonoBehaviour
         GameObject player = GameObject.FindWithTag("Player");
         Transform playerTrans = player.transform;
 
-        if (transform.position.y < playerTrans.position.y - 2)
+        if (transform.position.y < playerTrans.position.y - 0.5)
             JumpingAfterPlayer();
     }
 
