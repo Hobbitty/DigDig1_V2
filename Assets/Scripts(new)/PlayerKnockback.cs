@@ -10,12 +10,13 @@ public class PlayerKnockback : MonoBehaviour
     public Rigidbody2D rBody;
     public Vector2 knockbackDirection;
     public static bool IsKnockbacked;
-    public Transform enemyPosition;
+    private Transform enemyPosition;
     public SpriteRenderer playerSprite;
     public float knockbackValue;
 
     void Start()
     {
+        enemyPosition = GetComponent<Transform>();
         knockBackReset = 0;
         IsKnockbacked = false;
     }
