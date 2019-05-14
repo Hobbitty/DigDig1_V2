@@ -27,6 +27,10 @@ public class PlayerAttack : MonoBehaviour
     public int currentAmmo;
     public TextMeshProUGUI displayAmmo;
 
+    [Header("Animation")]
+    public Animator playerAnimator;
+
+    [Header("Other")]
     private Rigidbody2D rbodyPlayer;
     private bool lookingUp;
     private bool lookingDown;
@@ -34,6 +38,8 @@ public class PlayerAttack : MonoBehaviour
     public bool enemyHit;
     public AudioSource hit;
     public AudioSource hitStick;
+    public float animTimer;
+    public bool attackAnimation;
 
 
     private Transform playerPos;
@@ -59,6 +65,9 @@ public class PlayerAttack : MonoBehaviour
         Attacking();
         AttackingCooldown();
         RangedAttack();
+
+       
+
     }
 
     void Attacking()
@@ -70,6 +79,11 @@ public class PlayerAttack : MonoBehaviour
             Instantiate(attackHurtBoxForward, attackDirection);
             attackTimer = attackTimerMaxValue;
             hitStick.Play();
+            playerAnimator.SetBool("attacking", true);
+           
+
+
+
         }
         if (Input.GetKeyDown(KeyCode.C) && lookingUp == true && canAttack == true)
         {
@@ -88,7 +102,7 @@ public class PlayerAttack : MonoBehaviour
 
             hitStick.Play();
 
-            
+
 
             //rbodyPlayer.velocity = transform.up * 10;
 
@@ -160,12 +174,12 @@ public class PlayerAttack : MonoBehaviour
 
         displayAmmo.text = string.Format("AMMO: {0}", currentAmmo);
 
-        if(currentAmmo > maxAmmo)
+        if (currentAmmo > maxAmmo)
         {
             currentAmmo = maxAmmo;
         }
 
-        if(destroy.playerPickedUpAmmo == true)
+        if (destroy.playerPickedUpAmmo == true)
         {
             currentAmmo = currentAmmo + 10;
             destroy.playerPickedUpAmmo = false;
@@ -174,14 +188,14 @@ public class PlayerAttack : MonoBehaviour
     }
 
 
-   
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "EnemyHurtBox")
         {
             enemyHit = true;
-           
+
         }
     }
 

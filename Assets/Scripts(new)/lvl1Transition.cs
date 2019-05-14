@@ -81,12 +81,13 @@ public class lvl1Transition : MonoBehaviour
                 }
             }
 
-            /*  if(timer3 >= 3)
+              if(timer3 >= 3)
               {
                   SceneManager.LoadScene(sceneToLoad);
               }
 
-              timer = timer + 1 * Time.deltaTime;
+              /*
+            timer = timer + 1 * Time.deltaTime;
               if (fadeIn == true)
               {
                   if (timer >= 2)
