@@ -25,7 +25,7 @@ public class lvl1Transition : MonoBehaviour
     void Start()
     {
         bigEnemyRBody.bodyType = RigidbodyType2D.Static;
-        fadeValue = 0f;
+
         fadeValue = 1f;
         fadeIn = false;
         doShake = false;
@@ -33,6 +33,12 @@ public class lvl1Transition : MonoBehaviour
 
     void Update()
     {
+
+        if (doShake == true)
+        {
+            print("Shake");
+        }
+
         if (fadeIn == false)
         {
             fadeValue = fadeValue - 0.3f * Time.deltaTime;
@@ -43,6 +49,8 @@ public class lvl1Transition : MonoBehaviour
             }
 
         }
+
+        print(fadeValue);
 
         fade.color = new Color(0f, 0f, 0f, fadeValue);
 
@@ -66,27 +74,28 @@ public class lvl1Transition : MonoBehaviour
             {
                 doShake = true;
                 enemyLanding.playSound = true;
-            }
-
-            if(timer3 >= 3)
-            {
-                SceneManager.LoadScene(sceneToLoad);
-            }
-
-            timer = timer + 1 * Time.deltaTime;
-            if (fadeIn == true)
-            {
-                if (timer >= 2)
+                fadeValue = fadeValue + 0.2f * Time.deltaTime;
+                if (fadeValue >= 0.6f)
                 {
-                    fadeValue = fadeValue + 0.2f * Time.deltaTime;
-                    if (fadeValue >= 0.6f)
-                    {
-                        fadeValue = 1;
-                    }
+                    fadeValue = 1;
                 }
             }
-        }
 
+              if(timer3 >= 3)
+              {
+                  SceneManager.LoadScene(sceneToLoad);
+              }
+
+              /*
+            timer = timer + 1 * Time.deltaTime;
+              if (fadeIn == true)
+              {
+                  if (timer >= 2)
+                  {
+
+                  } */
+        }
     }
 
 }
+

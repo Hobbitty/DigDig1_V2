@@ -321,9 +321,9 @@ MonoBehaviour:
   deathEffect: {fileID: 4327133232221799283, guid: bf5aca195a7cc294fa7b6ace160125a6,
     type: 3}
   miniBossEnemy: 0
-  enemyDeathSound: {fileID: 0}
+  enemyDeathSound: {fileID: 5842712262872691317}
   enemyDeathTimer: 0
-  enemyHurtsound: {fileID: 0}
+  enemyHurtsound: {fileID: 5842712262872691317}
 --- !u!82 &5842712262872691317
 AudioSource:
   m_ObjectHideFlags: 0
@@ -334,7 +334,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 055deba1a71041c4496486aacd1fca41, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
