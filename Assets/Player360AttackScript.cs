@@ -16,6 +16,7 @@ public class Player360AttackScript : MonoBehaviour
 
             GameObject newObject = Instantiate(hurtBox);
             newObject.transform.position = new Vector3(newObject.transform.position.x,newObject.transform.position.y,0);
+            newObject.transform.LookAt(ray.GetPoint(0));
         }
     }
 }
