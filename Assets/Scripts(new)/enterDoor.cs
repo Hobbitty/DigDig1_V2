@@ -11,6 +11,8 @@ public class enterDoor : MonoBehaviour
     public SpriteRenderer door;
     public Sprite doorOpen;
     public bool doorIsOpen;
+    public Transform playerPos;
+    public SpriteRenderer Esprite;
 
     [Header("eButton")]
     public GameObject eButton;
@@ -35,6 +37,18 @@ public class enterDoor : MonoBehaviour
         {
             timer = timer + 1 * Time.deltaTime;
         }
+
+        if (playerPos.transform.position.x >= 251)
+        {
+            Esprite.enabled = true;
+        }
+        else
+        {
+            Esprite.enabled = false;
+        }
+
+        
+
 
     }
 
