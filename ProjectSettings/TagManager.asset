@@ -30,6 +30,8 @@ TagManager:
   - DamageFlash
   - EnemyHurtBox
   - AmmoPack
+  - CheckpointManager
+  - KeyPress
   layers:
   - Default
   - TransparentFX

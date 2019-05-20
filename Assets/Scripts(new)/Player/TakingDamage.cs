@@ -36,8 +36,6 @@ public class TakingDamage : MonoBehaviour
     public AudioSource deathSound;
     public Animator playerAnimator;
 
-    private Vector2 spawnPoint;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -50,8 +48,6 @@ public class TakingDamage : MonoBehaviour
         mainColor = GetComponent<SpriteRenderer>().color;
 
         lvlPlayerDiedOn += 1;
-
-        spawnPoint = transform.position;
     }
 
     // Update is called once per frame
@@ -118,7 +114,7 @@ public class TakingDamage : MonoBehaviour
         }
 
         if (collision.gameObject.tag == "Killplane")
-            transform.position = spawnPoint;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
 
