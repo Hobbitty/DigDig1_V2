@@ -189,6 +189,11 @@ PrefabInstance:
       propertyPath: displayAmmo
       value: 
       objectReference: {fileID: 2066490905}
+    - target: {fileID: 5544980844774510737, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
+        type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 689408185}
     - target: {fileID: 2800768319562061417, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
         type: 3}
       propertyPath: jumpSound
@@ -199,10 +204,15 @@ PrefabInstance:
       propertyPath: dashSound
       value: 
       objectReference: {fileID: 689408186}
+    - target: {fileID: 2800768319562061417, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
+        type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 689408185}
     - target: {fileID: 509304595, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
       propertyPath: playerAnimator
       value: 
-      objectReference: {fileID: 689408188}
+      objectReference: {fileID: 0}
     - target: {fileID: 8483685397304587774, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
         type: 3}
       propertyPath: dustCloud
@@ -303,16 +313,6 @@ PrefabInstance:
       propertyPath: rBody
       value: 
       objectReference: {fileID: 689408192}
-    - target: {fileID: 7024926596756973601, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
-        type: 3}
-      propertyPath: rBody
-      value: 
-      objectReference: {fileID: 1952077791}
-    - target: {fileID: 7024926596756973601, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
-        type: 3}
-      propertyPath: mobAlive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6162771532154024378, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
         type: 3}
       propertyPath: playerPosition
@@ -328,6 +328,16 @@ PrefabInstance:
       propertyPath: playerSprite
       value: 
       objectReference: {fileID: 689408193}
+    - target: {fileID: 7024926596756973601, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
+        type: 3}
+      propertyPath: rBody
+      value: 
+      objectReference: {fileID: 1952077791}
+    - target: {fileID: 7024926596756973601, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
+        type: 3}
+      propertyPath: mobAlive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f, type: 3}
 --- !u!1 &103005788
@@ -525,11 +535,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3875285675272948323, guid: beb47ccd095047847a176a1578f75efd,
-        type: 3}
-      propertyPath: healthPoints
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3532411013167976298, guid: beb47ccd095047847a176a1578f75efd,
         type: 3}
       propertyPath: playerPosition
@@ -545,6 +550,11 @@ PrefabInstance:
       propertyPath: playerSprite
       value: 
       objectReference: {fileID: 689408193}
+    - target: {fileID: 3875285675272948323, guid: beb47ccd095047847a176a1578f75efd,
+        type: 3}
+      propertyPath: healthPoints
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: beb47ccd095047847a176a1578f75efd, type: 3}
 --- !u!1 &342440508
@@ -892,6 +902,25 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 14427348}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &689408185
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689408184}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 74a8d8c6bafd5264083538a450512742, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!82 &689408186 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 1230057615, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
@@ -901,12 +930,6 @@ AudioSource:
 --- !u!82 &689408187 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 1230057614, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
-    type: 3}
-  m_PrefabInstance: {fileID: 14427348}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &689408188 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 758427759, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
     type: 3}
   m_PrefabInstance: {fileID: 14427348}
   m_PrefabAsset: {fileID: 0}
@@ -1435,16 +1458,6 @@ PrefabInstance:
       propertyPath: rBody
       value: 
       objectReference: {fileID: 689408192}
-    - target: {fileID: 7024926596756973601, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
-        type: 3}
-      propertyPath: rBody
-      value: 
-      objectReference: {fileID: 2071624670}
-    - target: {fileID: 7024926596756973601, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
-        type: 3}
-      propertyPath: mobAlive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6162771532154024378, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
         type: 3}
       propertyPath: playerPosition
@@ -1460,6 +1473,16 @@ PrefabInstance:
       propertyPath: playerSprite
       value: 
       objectReference: {fileID: 689408193}
+    - target: {fileID: 7024926596756973601, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
+        type: 3}
+      propertyPath: rBody
+      value: 
+      objectReference: {fileID: 2071624670}
+    - target: {fileID: 7024926596756973601, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
+        type: 3}
+      propertyPath: mobAlive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f, type: 3}
 --- !u!1 &1215511745

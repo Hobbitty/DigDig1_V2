@@ -935,7 +935,7 @@ MonoBehaviour:
   cameraShake: {fileID: 1076331139}
   timer3: 0
   sceneToLoad: level1
-  playerAnimator: {fileID: 1550940927}
+  playerAnimator: {fileID: 985390367}
   fadePos: {fileID: 1217878430}
 --- !u!4 &646386665
 Transform:
@@ -1249,6 +1249,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &985390355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7285945204729540855, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2068516405}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &985390367
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985390355}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 74a8d8c6bafd5264083538a450512742, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1076331137
 GameObject:
   m_ObjectHideFlags: 0
@@ -2122,12 +2147,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2068516405}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1550940927 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1550940927, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
-    type: 3}
-  m_PrefabInstance: {fileID: 2068516405}
-  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1565188891 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 7024926596756973661, guid: 1a3ad1a39a48f7148b1d69b4fa15de9f,
@@ -2478,6 +2497,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5544980844774510737, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800768319562061417, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
+        type: 3}
+      propertyPath: canDash
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800768319562061417, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
+        type: 3}
+      propertyPath: dashSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800768319562061417, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800768319562061417, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
+        type: 3}
+      propertyPath: jumpHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800768319562061417, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
+        type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 985390367}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
 --- !u!1 &2106494747
