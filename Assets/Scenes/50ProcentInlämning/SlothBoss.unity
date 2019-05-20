@@ -839,6 +839,10 @@ PrefabInstance:
       propertyPath: deathScene
       value: SlothBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 1717031739, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
+      propertyPath: playerHP
+      value: 
+      objectReference: {fileID: 1858563873}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2, type: 3}
 --- !u!1 &1810254822
@@ -920,6 +924,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1858563873 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8250748365877229360, guid: e6f7a00bd23c8ee4890b2f8d74ffcec2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1734447795}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa125e21b5b58d74aaf9ddd22e1f1804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1987167792
 PrefabInstance:
   m_ObjectHideFlags: 0
