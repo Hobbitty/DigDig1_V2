@@ -17,8 +17,8 @@ GameObject:
   - component: {fileID: 6949908592053312311}
   - component: {fileID: 908877938}
   - component: {fileID: 908877931}
-  - component: {fileID: 5202671489059262761}
   - component: {fileID: 5842712262872691317}
+  - component: {fileID: 6162771532154024378}
   m_Layer: 0
   m_Name: miniFlyingEnemy
   m_TagString: Untagged
@@ -303,27 +303,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5202671489059262761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7024926596756973663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6e56aa598ee41c46849ae66ff4725d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthPoints: 1
-  knockbackX: 1000
-  knockbackY: 1000
-  deathEffect: {fileID: 4327133232221799283, guid: bf5aca195a7cc294fa7b6ace160125a6,
-    type: 3}
-  miniBossEnemy: 0
-  enemyDeathSound: {fileID: 5842712262872691317}
-  enemyDeathTimer: 0
-  enemyHurtsound: {fileID: 5842712262872691317}
 --- !u!82 &5842712262872691317
 AudioSource:
   m_ObjectHideFlags: 0
@@ -420,6 +399,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6162771532154024378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7024926596756973663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857f2c49d49bdb14cb90e573e4c754f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockBackReset: 0
+  playerPosition: {fileID: 0}
+  rBody: {fileID: 0}
+  knockbackDirection: {x: 0, y: 0}
+  playerSprite: {fileID: 0}
+  knockbackValue: 200
 --- !u!1 &7024926598222184202
 GameObject:
   m_ObjectHideFlags: 0
