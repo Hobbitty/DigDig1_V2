@@ -20,6 +20,7 @@ public class lvl1Transition : MonoBehaviour
     public float timer3;
     public string sceneToLoad = "level1";
     public Animator playerAnimator;
+    public Transform fadePos;
 
 
     void Start()
@@ -46,6 +47,7 @@ public class lvl1Transition : MonoBehaviour
             {
                 fadeValue = 0;
                 fadeIn = true;
+                fadePos.position = new Vector2(100, 100);
             }
 
         }
@@ -75,10 +77,10 @@ public class lvl1Transition : MonoBehaviour
                 doShake = true;
                 enemyLanding.playSound = true;
                 fadeValue = fadeValue + 0.2f * Time.deltaTime;
-                if (fadeValue >= 0.6f)
+               /* if (fadeValue >= 1f)
                 {
                     fadeValue = 1;
-                }
+                } */
             }
 
               if(timer3 >= 3)
