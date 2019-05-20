@@ -173,7 +173,8 @@ MonoBehaviour:
   - {fileID: 4956245424803338278, guid: 83eaffbe047c39349b1f3d2ea4ec73f0, type: 3}
   - {fileID: 1103016175780064218, guid: 2a3acf82388012a4f8f8f421b9748d4f, type: 3}
   - {fileID: 8685819257722076908, guid: 4a1770b75c0eab3418f532a3bfcc1b4d, type: 3}
-  closedrooms: {fileID: 0}
+  closedrooms: {fileID: 1969619869207613581, guid: 95a72a9d890843848aae2a2271f26a09,
+    type: 3}
   rooms: []
   waitTime: 2
   spawnedBoss: 0
@@ -186,13 +187,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 45430360}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.6027273, y: -0.18353328, z: -47.746094}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &558867938
+--- !u!1001 &500219976
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -393,7 +394,7 @@ PrefabInstance:
     - target: {fileID: 8524146793419578137, guid: fb5458dc488d935469b8bd41532c3364,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8524146793419578137, guid: fb5458dc488d935469b8bd41532c3364,
         type: 3}

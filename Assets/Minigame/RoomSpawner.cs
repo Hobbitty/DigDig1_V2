@@ -49,7 +49,7 @@ public class RoomSpawner : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("MiniGameSpawnRoomPoints") && other.GetComponent<RoomSpawner>().spawned == true)
+        if (other.CompareTag("Rooms") && other.GetComponent<RoomSpawner>().spawned == true)
         {
             if (other.GetComponent<RoomSpawner>().spawned == false && spawned == false)
             {
